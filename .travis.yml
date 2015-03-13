@@ -22,5 +22,4 @@ after_success:
 - grunt publish
 env:
   global:
-  - secure: D8gvfMPVob6pMlZ8bqzmJuGPFydJ9FsiRKlBau8byPS01rQZQ3Cn3ap8Z9y28Yi7piZ9w7qiU6AghQ12fwz14pKeDTzg2HhcopIU/hpf3y1nz+zLZXQQ4HxkFGBSL3vixhgaKcuw9y6RQEJwGyQWl5Mn0CArFi3CnnO1mCVsODc=
-  - secure: DKIrwdqpI4NPYp4aulvQ1S+rq/JFyarHcXT6Al3otrcjlqoW0tT0Ep19h/z++s3aJW363zWrhrGXviXyS+Y4N/6c4lwroYKxGZlzew2LcMtusJn8SfMmlOZJshNPgMpIPjsyz03MKm0hBmaLow2g2WvFvetq5iiZikbVe+hiLxQ=
+    secure: mXdgXA7SnhWzJRBoD33UAXn5Whzdj7B5+lIFoLk91QR7Gk4JZ5MGvbkB71qFD+17NPUTWHJfsWqJ/IXQNgm8RKV1kO2J8yJ9weBtXx19BUHu7/fCL+k/51f26yloOy/mT/G0DR11D86bIvfbf4ECuxTQ3/WadqB4eke7A6nXiHo=
