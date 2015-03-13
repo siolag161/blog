@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR="Jolly, Inc"
+AUTHOR="pdt"
 LOCALE="en_US.utf8"
 TIMEZONE = 'Asia/Saigon'
-
-SITENAME = "Jolly's Blog!"
+DATE_FORMATS="%H:%M %a %d %b %y"
+SITENAME = "pdt's Blog!"
 
 DISPLAY_PAGES_ON_MENU = True
 WITH_PAGINATION = True

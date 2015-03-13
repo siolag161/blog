@@ -1,0 +1,8 @@
+{% block title %} {% if title  %}Title: {{title}}{% endif %}{% endblock title %}
+{% block date %} {% if date  %}Date: {{date}}{% endif %}{% endblock date %}
+{% block tags %} {% if tags  %}Tags: {{tags}}{% endif %}{% endblock tags %}
+{% block category %} {% if category  %}Category: {{category}}{% endif %}{% endblock category %}
+{% block author %} {% if author  %}Author: {{author}} {% endif %}{% endblock author %}
+{% block summary %} {% if summary  %}Summary: {{summary}}{% endif %}{% endblock summary %}
+
+This is the content of my super blog post.

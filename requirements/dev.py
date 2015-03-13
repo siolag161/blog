@@ -13,6 +13,7 @@ pelican==3.5.0
 pycrypto==2.6.1
 Pygments==2.0.2
 python-dateutil==2.4.1
+python-slugify==0.1.0
 pytz==2014.10
 PyYAML==3.11
 six==1.9.0
