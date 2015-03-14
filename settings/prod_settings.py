@@ -12,5 +12,11 @@ RELATIVE_URLS = False
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
+#SITEMAP
+SITEMAP_SAVE_AS += ('sitemap.xml',)
 
+# COMMENT
+DISQUS_SITENAME="pdt-space"
 
+#COMMENT
+GOOGLE_ANALYTICS="UA-60741981-1"

@@ -16,7 +16,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Path Meta Data
 STATIC_PATHS = ['images', 'assets', 'extras', 'static']
-EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},}
+EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},'extra/favicon.ico': {'path': 'favicon.ico'}
+}
 
 
 #======= BOOTSTRAP 3 THEMES RELATED
@@ -32,3 +33,9 @@ THEME = "theme"
 TYPOGRIFY = True
 SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_AUTHOR = True
+
+DISPLAY_TAGS_ON_SIDEBAR = True
+TAG_CLOUD_STEPS = 1
+
+DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
+
