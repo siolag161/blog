@@ -13,7 +13,8 @@ FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 #SITEMAP
-SITEMAP_SAVE_AS += ('sitemap.xml',)
+DIRECT_TEMPLATES += ('sitemap',)
+SITEMAP_SAVE_AS = 'sitemap.xml'
 
 # COMMENT
 DISQUS_SITENAME="pdt-space"
