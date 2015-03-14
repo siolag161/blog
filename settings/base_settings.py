@@ -16,7 +16,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Path Meta Data
 STATIC_PATHS = ['images', 'assets', 'extras', 'static']
-EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},'extra/favicon.ico': {'path': 'favicon.ico'}
+EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},
+		       'extras/favicon.ico': {'path': 'favicon.ico'}
 }
 
 
@@ -39,3 +40,4 @@ TAG_CLOUD_STEPS = 1
 
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
 
+FAVICON = "favicon.ico"
