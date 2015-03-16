@@ -21,6 +21,7 @@ module.exports =
       '<%= paths.pelican_content %>/**/*.rst'
       '<%= paths.pelican_content %>/**/*.md'
       '<%= paths.pelican_theme %>/**/*.*'
+      '<%= paths.pelican_conf %>/*.py'
       '<%= paths.css %>/**/*.{scss,css}'
       '<%= paths.js %>/**/*.{coffee,js}'
     ]
@@ -29,6 +30,7 @@ module.exports =
     files: [
       '<%= paths.pelican_content %>/**/*.rst',
       '<%= paths.pelican_content %>/**/*.md'
+      '<%= paths.pelican_conf %>/*.py'
       ]
     tasks: [
       'build_pelican_dev'

@@ -13,6 +13,7 @@ module.exports = (grunt) ->
     vendors: './bower_components'
     fonts: static_path + '/static/fonts'
 
+    pelican_conf: "./settings/"
     pelican_dev_conf: "./settings/dev_settings.py"
     pelican_prod_conf: "./settings/prod_settings.py"
   
