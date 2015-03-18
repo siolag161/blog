@@ -21,6 +21,10 @@ module.exports = (grunt) ->
     pelican_theme: "./theme"
     pelican_output: "./output"
 
+    pelican_assets: "./output/static"
+    pelican_assets_js: "./output/static/js"
+    pelican_assets_css: "./output/static/css"
+
   # Loads grunt config automatically via broken up tasks
   # https://github.com/firstandthird/load-grunt-config
   require('load-grunt-config') grunt,

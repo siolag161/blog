@@ -1,7 +1,9 @@
+beautifulsoup4==4.3.2
 binaryornot==0.3.0
 blinker==1.3
 docutils==0.12
 ecdsa==0.13
+Fabric==1.10.1
 feedgenerator==1.7
 ghp-import==0.4.1
 Jinja2==2.7.3

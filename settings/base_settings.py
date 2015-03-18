@@ -41,3 +41,10 @@ TAG_CLOUD_STEPS = 1
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
 
 FAVICON = "extras/favicon"
+
+### plugins
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid',
+                'toc(permalink=true)']
+
+PLUGIN_PATHS = ['../pelican-plugins']
+PLUGINS = ['extract_toc']

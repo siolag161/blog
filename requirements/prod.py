@@ -1,3 +1,4 @@
+beautifulsoup4==4.3.2
 binaryornot==0.3.0
 blinker==1.3
 docutils==0.12

@@ -16,14 +16,12 @@ module.exports =
 
   livereload:
     options:
-      livereload: true
+      livereload: '<%= connect.livereload %>'
     files: [
-      '<%= paths.pelican_content %>/**/*.rst'
       '<%= paths.pelican_content %>/**/*.md'
-      '<%= paths.pelican_theme %>/**/*.*'
       '<%= paths.pelican_conf %>/*.py'
-      '<%= paths.css %>/**/*.{scss,css}'
-      '<%= paths.js %>/**/*.{coffee,js}'
+      '<%= paths.pelican_assets_css %>/build/*.css'
+      '<%= paths.coffee %>/*.coffee'
     ]
 
   pelican:
@@ -43,6 +41,7 @@ module.exports =
       'newer:sass'
       'newer:autoprefixer'
       'replace:stylesheets'
+      'copy:stylesheets'
     ]
 
   scripts:
