@@ -3,23 +3,25 @@ python:
 - '2.7'
 cache:
   directories:
-  - "$HOME/.pip-cache/"
-  - "/home/travis/virtualenv/python2.7"
-  - node_modules
+    - $HOME/.pip-cache/
+      - /home/travis/virtualenv/python2.7
+       - node_modules
 branches:
   only:
-  - master
+   - master
 before_install:
-- npm install -g grunt-cli
-- npm install -g bower
+  - npm install -g npm@2
+  - npm install -g grunt-cli
+  - npm install -g bower
 install:
-- npm install
-- bower install
-- pip install -r requirements/prod.py --download-cache $HOME/.pip-cache
+  - npm install
+  - bower install
+  - pip install -r requirements/prod.py --download-cache $HOME/.pip-cache
+
 script:
-- grunt prod
+  - grunt prod
 after_success:
-- grunt publish
+  - grunt publish
 env:
   global:
     secure: mXdgXA7SnhWzJRBoD33UAXn5Whzdj7B5+lIFoLk91QR7Gk4JZ5MGvbkB71qFD+17NPUTWHJfsWqJ/IXQNgm8RKV1kO2J8yJ9weBtXx19BUHu7/fCL+k/51f26yloOy/mT/G0DR11D86bIvfbf4ECuxTQ3/WadqB4eke7A6nXiHo=
