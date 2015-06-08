@@ -10,10 +10,12 @@ Summary: how to setup c++
 # Summary
 This document details how to setup a modern C++ environnement in Linux (based on the version of EarthServer)
 
-# Upgrade distribution 
+# Upgrade distribution
+
     :::bash
 	sudo apt-get update
 	sudo apt-get upgrade
+    
    
 # Install cmake
 	:::bash
@@ -22,18 +24,20 @@ This document details how to setup a modern C++ environnement in Linux (based on
 	sudo apt-get install build-essential bzip2 lynx zile zlib1g-dev git unzip
 
 # Install GCC-4.9 From Source
-	:::bash
-	sudo apt-get install libgmp3-dev libgmp-dev libmpfr-dev libmpc-dev flex bison libc6-dev gcc-multilib
 
-	sudo mkdir /gcc
-	sudo chmod 777 /gcc
-	svn co svn://gcc.gnu.org/svn/gcc/trunk /gcc
-
-	cd /gcc
-	./contrib/download_prerequisites
-
-	mkdir /gcc/objdir
-	cd /gcc/objdir
+```bash
+    sudo apt-get install libgmp3-dev libgmp-dev libmpfr-dev libmpc-dev flex bison libc6-dev gcc-multilib
+    
+    sudo mkdir /gcc
+    sudo chmod 777 /gcc
+    svn co svn://gcc.gnu.org/svn/gcc/trunk /gcc
+    
+    cd /gcc
+    ./contrib/download_prerequisites
+    
+    mkdir /gcc/objdir
+    cd /gcc/objdir
+```
 
 configure gcc build:
 -------------------
@@ -55,22 +59,20 @@ build and install:
 Update the gcc and g++ symbolic links
 ------------------------------------------
 
-	:::bash
-	sudo rm /usr/bin/g++
-	sudo ln -s /usr/bin/g++-4.9 /usr/bin/g++
-		
-	sudo rm /usr/bin/gcc
-	sudo ln -s /usr/bin/gcc-4.9 /usr/bin/gcc
+```bash
+    sudo update-alternatives --remove-all gcc
+    sudo update-alternatives --remove-all g++
+    
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
+    sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
 
-	sudo rm /usr/bin/cpp
-	sudo ln -s /usr/bin/cpp-4.9 /usr/bin/cpp
+    sudo update-alternatives --config gcc
+    sudo update-alternatives --config g++
+```
 
-	sudo rm /usr/bin/gcov
-	sudo ln -s /usr/bin/gcov-4.9 /usr/bin/gcov
-		
-	sudo rm /usr/bin/c++
-	sudo ln -s /usr/bin/c++-4.9 /usr/bin/c++
-	
+    
+
+
 Test g++ 4.9
 --------------------------------------
 edit /tmp/generalized-lambda.cpp:
@@ -143,19 +145,19 @@ download and build clang from source
 	cd ../..
 	mkdir build
 	cd build
-	../llvm/configure --prefix=/usr/local/llvm-3.4 --bindir=/usr/local/llvm-3.4/bin --enable-cxx11 --enable-optimizedCXX=/usr/bin/g++-4.7 CC=/usr/bin/gcc-4.7
+	../llvm/configure --prefix=/usr/local/llvm --bindir=/usr/local/llvm/bin --enable-cxx11 --enable-optimized CXX=/usr/bin/g++ CC=/usr/bin/gcc
 
 	make -j 8
 
 	sudo make install
 
-edit ~/.bashrc to add /usr/local/llvm-3.4/bin to your path and set CC and CXX accordingly:
+edit ~/.bashrc to add /usr/local/llvm/bin to your path and set CC and CXX accordingly:
 
 	:::bash
-	PATH=$PATH:/usr/local/llvm-3.4/bin
+	PATH=$PATH:/usr/local/llvm/bin
 
-	export CC=/usr/local/llvm-3.4/bin/clang
-	export CXX=/usr/local/llvm-3.4/bin/clang++
+	export CC=/usr/local/llvm/bin/clang
+	export CXX=/usr/local/llvm/bin/clang++
 
 Reload .bashrc
 

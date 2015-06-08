@@ -35,7 +35,8 @@ TYPOGRIFY = True
 SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_AUTHOR = True
 
-DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_ON_SIDEBAR = False
+HIDE_SIDEBAR = True
 TAG_CLOUD_STEPS = 1
 
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
@@ -48,3 +49,4 @@ MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid',
 
 PLUGIN_PATHS = ['../pelican-plugins']
 PLUGINS = ['extract_toc']
+

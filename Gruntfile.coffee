@@ -16,7 +16,6 @@ module.exports = (grunt) ->
     pelican_conf: "./settings/"
     pelican_dev_conf: "./settings/dev_settings.py"
     pelican_prod_conf: "./settings/prod_settings.py"
-  
     pelican_content: "./content"
     pelican_theme: "./theme"
     pelican_output: "./output"
