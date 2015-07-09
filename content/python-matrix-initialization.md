@@ -3,6 +3,8 @@ Date: 14:55 Thu 09 Jul 2015
 Tags: python,code,bug
 Category: dev
 Author: pdt
+Summary: init a matrix in python
+
 
 # Problem
 Yesterday I was doing some data analysis where there's a intermediary step I had to store the result in a matrix of fixed size that
