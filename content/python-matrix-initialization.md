@@ -50,9 +50,12 @@ There're several ways actually. For example we can use list comprehension like s
 [[0.0, 2.5, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0]]
 >>> 
 ```
-
 I ended up using the `numpy.zeros()` function which I should have had done in the first place since the matrix would
 eventually be converted into `numpy.array`
 
-
+# Conclusion
+Every language has its moments of `gotcha`, as we grow more experienced, we will
+get less error-prone. In `python` in particular, I also find the following
+[regarding the mutable default arguments](http://stackoverflow.com/questions/101268/hidden-features-of-python#113198)
+very interesting. 
 
