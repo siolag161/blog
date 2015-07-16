@@ -9,3 +9,14 @@ a.headerlink {
   padding-left: 0.5em;
   color: grey;
 }
+
+.gist-syntax {
+  .highlight pre {
+    background: #fff;
+    color: #333;
+  }
+  /* .lines.highlight {
+     background: #fff;
+     color: #333;
+     } */
+}

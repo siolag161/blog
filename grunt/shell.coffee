@@ -5,7 +5,7 @@ module.exports =
 
 
   pelican_build_dev:
-    command: 'pelican <%= paths.pelican_content %> -s <%= paths.pelican_dev_conf %>'
+    command: 'pelican -d <%= paths.pelican_content %> -s <%= paths.pelican_dev_conf %>'
 
   pelican_build_prod:
     command: 'pelican <%= paths.pelican_content %> -s <%= paths.pelican_prod_conf %>'

@@ -44,9 +44,12 @@ DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
 FAVICON = "extras/favicon"
 
 ### plugins
+
+PLUGIN_PATHS = ['../plugins/']
+PLUGINS = ['extract_toc', 'gist', ]
 MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid',
-                'toc(permalink=true)']
+                 'toc(permalink=true)']
 
-PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['extract_toc']
 
+#
+IGNORE_FILES = ['.#*', '*draft*']

@@ -3,7 +3,6 @@ Date: 11:20 Fri 10 Jul 2015
 Tags: dev, code, python, clustering
 Category: dev
 Author: pdt
-Status: draft
 Summary: Task assignment in clustering evaluation
 
 Let's say we perform a cluster analysis on the dataset using a fancy algorithm
@@ -44,18 +43,35 @@ For example, if we compute the accuracy for these two clusterings:
 |0|0|0|1|1|1| (1)
 |1|1|1|0|0|0| (2)
 ```
-it would yield a value of `0.0`!! but in fact it perfectly agrees on how to group objects in categories.
+it would yield a value of `0.0`!! but in reality it perfectly agrees on how to group objects in categories. So
+we got it totally wrong.
 
 # Label matching
-One simple way to solve this is to try to match the labels of the obtained result with the ground truth, so
-we can use the above mentioned measures. The naive way is to consider all the label permutations possible for
-**CT** and compares it with **GT** and pick the one that maximizes the said measure. We could, of course,
-do better by using for example some [assigment tasking algorithm](https://en.wikipedia.org/wiki/Assignment_problem#Algorithms_and_generalizations),
-[Hungarian](https://en.wikipedia.org/wiki/Hungarian_algorithm) is one of them.
+The naive way is to consider all the label permutations possible for
+**CT** and compares it with **GT** and pick the one that minimizes the error.
+Look at the example above. In the `(2)` clustering, if we change the label `1`
+to `0` while fixing the rest labeling, we can see that we now have a
+better result, in term of similarity to `(1)`. It would not suffice however, under
+<!-- our conditions (the 2 label sets must match) we have to also assign `0` to `1` -->.
+if we continue and assign `0` to `1` we can get even a better labeling.
 
-# Hungarian (or Munkres) for clustering evaluation in Python
-For illustrating, I created a simple program in Python performing 
+<!-- But by how much did we improve? -->
 
+<!-- Let's say we have 2 clustering `C1` and `C2`, -->
+<!-- Indeed, one way to measure the distance between 2 clusterings is to count the  -->
 
+<!-- We first define a cost function `f(c1, c2)` -->
+In reality we can do better than the brute force approach. Our problem is actually
+equivalent to the [assigment problem](https://en.wikipedia.org/wiki/Assignment_problem#Algorithms_and_generalizations)
+in which we assign labels to labels. We need to compute the cost matrix, however.
+This is the complement of the gain matrix whose element `(i,j)` is the number of
+items that is classified as `i`in the first labeling and as `j` in the second one.
 
-[[gist:kfr2:5580453]]
+# Demonstration using [Hungarian solver](https://en.wikipedia.org/wiki/Hungarian_algorithm)
+Here is a gist for matching label of a clustering obtained by `K-means` to the
+ground truth, on the famous `Iris` dataset using the Hungarian algorithm,
+also called Munkres.
+
+We need the `numpy`, `scipy` and the [Munkres package](https://github.com/bmc/munkres)
+
+[[gist:siolag161:dc6e42b64e1bde1f263b]]
