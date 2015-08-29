@@ -4,6 +4,7 @@ module.exports = (grunt) ->
   pkg = grunt.file.readJSON 'package.json'
   name = 'content'
   static_path = "./" + name
+  output_path = "./output/blog"
   paths =
     css: static_path + '/static/css'
     scss: static_path + '/static/css/scss'
@@ -18,11 +19,11 @@ module.exports = (grunt) ->
     pelican_prod_conf: "./settings/prod_settings.py"
     pelican_content: "./content"
     pelican_theme: "./theme"
-    pelican_output: "./output"
+    pelican_output: output_path
 
-    pelican_assets: "./output/static"
-    pelican_assets_js: "./output/static/js"
-    pelican_assets_css: "./output/static/css"
+    pelican_assets: output_path + "static"
+    pelican_assets_js: output_path + "static/js"
+    pelican_assets_css: output_path + "static/css"
 
   # Loads grunt config automatically via broken up tasks
   # https://github.com/firstandthird/load-grunt-config
