@@ -28,7 +28,7 @@ CUSTOM_CSS = 'static/css/build/custom_style.css'
 
 #======= END BOOTSTRAP 3
 # Theme
-OUTPUT_PATH = "../output/blog"
+OUTPUT_PATH = "../output/"
 THEME = "theme"
 
 TYPOGRIFY = True

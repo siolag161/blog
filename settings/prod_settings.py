@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__)))
 from base_settings import *
 
 # PRODUCTION CHANGE
-SITEURL = "http://pdt.space/blog"
+SITEURL = "http://blog.pdt.space/"
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
