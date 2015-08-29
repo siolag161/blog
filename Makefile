@@ -1,6 +1,6 @@
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output/blog
+OUTPUTDIR=$(BASEDIR)/output/
 
 github_deploy:
 	ghp-import -n $(OUTPUTDIR)
