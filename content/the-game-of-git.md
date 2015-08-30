@@ -1,4 +1,4 @@
-Title: The Game of Grit
+Title: The Game of Git
 Date: 23:12 Mon 20 Jul 2015
 Tags: dev,git,source-control
 Category: dev
