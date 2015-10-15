@@ -27,8 +27,8 @@ Well, the whole `Word vs Latex` has been around forever, much like
 `iinux vs windows`, some even claim that writing in words make us
 [more productive](http://mappingignorance.org/2015/04/06/word-or-latex-typesetting-which-one-is-more-productive-finally-scientifically-assessed/).
 Obviously I'm well aware of its superior quality of typography.
-I also know we should wory abonot structure the content while tweaking the
-the appearence simultanously. Don't worry, I already did my own homework.
+I also know we should worry about structure the content while tweaking the
+the appearance simultaneously. Don't worry, I already did my own homework.
 
 Usually, one should just say: it depends on what you want to accomplish.
 But truth be told, as much as I'm impressed with how well it is at rendering
