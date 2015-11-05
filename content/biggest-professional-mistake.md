@@ -1,7 +1,7 @@
 Title: Biggest professional mistake
 Date: 06:10 Thu 05 Nov 2015
 Tags: dev, engineering, mistake, learning
-Category: dev, misc
+Category: dev,misc
 Author: pdt
 This is about a time when I interviewed and the interviewer asked me about
 my biggest professional mistake to date.
@@ -13,9 +13,10 @@ I was during an interview and I was quite tense.
 Like everyone else, I've made tons of mistakes. Some are more painful than others. I typically take failure
 very very hard, but it helps in the long term avoiding some of these previous ones. So after thinking for a bit,
 I went with the time during my last-term internship. I remember it affecting me quite a lot, but I don't think my answer
-was really great, which is a sad because I really really like the position.
+was not that good, which is a shame because I really really like the position as I invested a lot a lot of my time on that.
+
 The thing is there are some lessons we learned the hard way that completely changed the way we work
-and thus we took them a bit for granted. After getting out of the company, I was thinking deeply about this,
+and thus we took them a bit for granted. After getting out of the office, I was thinking deeply about this,
 leading to a note, which subsequently becomes this post.
 
 Know your priorities
@@ -54,6 +55,8 @@ modify the code at all places.
 
 Moreover, one day it just hits me that I already visited the same stackoverflow page multiple times,
 which means I had not learned anything about this particular problem. Now I always always try to retype the whole thing first.
+You get to much better understand the idea behind the code, as well as the details of implementation, thus avoid all the
+subsequent problems. And it does not take that long, so it turns out we  actually save time!
 
 
 Always write unit tests
@@ -65,11 +68,10 @@ testing thing and hoped to get away with it.
 For me at that time, it works if the majority if for some cases it give the right behavior. Well, now
 most of seasoned/experienced engineers know it's 100\% stupid and I agree with them. Because I had to take feedback from
 the final client so the specs change constantly and boys the headache it gave me debugging/dealing with broken things.
-
-
-I learned this lesson so hard now I'm not even comfortable without unit tests. I just don't feel safe. I just have
-to write some tests to sleep better at night. There's someone like the guy in the first chapter of "Coders at work"
-who just knows that his code works but not me, not again.
+It's a classical case of inexperience and I learned this lesson so hard now I'm not even comfortable without unit tests.
+I just don't feel safe. I just have to write some tests to sleep better at night.
+There's someone like the guy in the first chapter of "Coders at work" who just knows that
+his code works but not me, not again.
 
 
 Final
