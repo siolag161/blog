@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>pdt's Blog!</title><link href="http://blog.pdt.space/" rel="alternate"></link><link href="http://blog.pdt.space/feeds/pdt.atom.xml" rel="self"></link><id>http://blog.pdt.space/</id><updated>2015-11-05T06:10:00+07:00</updated><entry><title>Biggest professional mistake</title><link href="http://blog.pdt.space/posts/2015/11/biggest-professional-mistake/" rel="alternate"></link><updated>2015-11-05T06:10:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-11-05:posts/2015/11/biggest-professional-mistake/</id><summary type="html">&lt;p&gt;This is about a time when I interviewed and the interviewer asked me about
+my biggest professional mistake to&amp;nbsp;date.&lt;/p&gt;
+&lt;p&gt;At that time it was not very clear to me what he meant by &amp;#8220;professional mistake&amp;#8221;, so I asked him
+whether it was like some illegal thing or the like. Yeah, it was kind of silly, I agree but you have to understand
+I was during an interview and I was quite&amp;nbsp;tense.&lt;/p&gt;
+&lt;p&gt;Like everyone else, I&amp;#8217;ve made tons of mistakes. Some are more painful than others. I typically take failure
+very very hard, but it helps in the long term avoiding some of these previous ones. So after thinking for a bit,
+I went with the time during my last-term internship. I remember it affecting me quite a lot, but I don&amp;#8217;t think my answer
+was not that good, which is a shame because I really really like the position as I invested a lot a lot of my time on&amp;nbsp;that.&lt;/p&gt;
+&lt;p&gt;The thing is there are some lessons we learned the hard way that completely changed the way we work
+and thus we took them a bit for granted. After getting out of the office, I was thinking deeply about this,
+leading to a note, which subsequently becomes this&amp;nbsp;post.&lt;/p&gt;
+&lt;h2 id="know-your-priorities"&gt;Know your priorities&lt;a class="headerlink" href="#know-your-priorities" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First, the mistake that I told the interviewer was where I had serialize and send data to the front-end where they are displayed
+using some js visualization libraries. Now it does not seem like too much, but I was not a front-end/js guy (far from it),
+so what I did was write some python wrappers for the visualization libraries since
+that what my old team taught me (even though it was java and not python but the idea still holds).
+The &amp;#8220;solution&amp;#8221; was ugly, complex and nasty. But the most important part is that it&amp;#8217;s very buggy,
+so it took me a lot of time debugging and ironing out the errors, missing out on all the
+&lt;code&gt;priorities&lt;/code&gt;. Yes, &lt;code&gt;priority&lt;/code&gt; is the key word here. I was tasked to help display the data, to solve a particular problem,
+not to write wrappers! So I ended up end up doing tons and tons of extra time yet  without much success.
+It was quite painful: the inertia, reverting to one&amp;#8217;s old shell without thinking. From that time one, everytime
+I spent much more time on the design part before diving right in like crazy. Some are much better than me at this,
+they do it intuitively but not me, I&amp;#8217;ve learned my&amp;nbsp;lesson.&lt;/p&gt;
+&lt;h2 id="copy-paste-is-evil"&gt;Copy-paste is &lt;span class="caps"&gt;EVIL&lt;/span&gt;&lt;a class="headerlink" href="#copy-paste-is-evil" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;What else? Yesterday I was teaching a course and see somebody was copying/pasting code from stackoverflow
+and had trouble getting the right answer. The code was correct  but there&amp;#8217;s a twist: it&amp;#8217;s not quite
+the same interface / precondition so one has to adapt a bit. I&amp;#8217;m not at all against using stackoverflow/gg but
+at least we have to understand the solution and the problem we&amp;#8217;re solving.
+So I asked him why he&amp;#8217;s struggling and walked him through the problem and the solution and it turned out very nice.
+What he did actually reminds me a lot of&amp;nbsp;myself.&lt;/p&gt;
+&lt;p&gt;So back when i started I used to put a focus on the whole problem solving and not much on implementation and
+I did a lot of copy-pasty from the net, especially when dealing with languages/frameworks that I was not familiar with.
+It helps accomplish the task much faster, at least at the beginning. Therefore, when the problem arises again,
+I just went ahead and took the old piece of code or searching, adapt a bitand put it&amp;nbsp;there.&lt;/p&gt;
+&lt;p&gt;Then there&amp;#8217;s this one co-worker who saw me doing this all over the place so he taught me about the
+&lt;code&gt;DRY principle&lt;/code&gt;. I did not quite get him until I had to deal with compilation errors when I change my mind but forget to
+modify the code at all&amp;nbsp;places.&lt;/p&gt;
+&lt;p&gt;Moreover, one day it just hits me that I already visited the same stackoverflow page multiple times,
+which means I had not learned anything about this particular problem. Now I always always try to retype the whole thing first.
+You get to much better understand the idea behind the code, as well as the details of implementation, thus avoid all the
+subsequent problems. And it does not take that long, so it turns out we  actually save&amp;nbsp;time!&lt;/p&gt;
+&lt;h2 id="always-write-unit-tests"&gt;Always write unit tests&lt;a class="headerlink" href="#always-write-unit-tests" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;But I still think the biggest mistake I committed is not writing unittest properly also during an internship. At my school,
+I actually don&amp;#8217;t remember we put a focus on this aspect. So in order to move faster, I completely ignore the whole
+testing thing and hoped to get away with&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;For me at that time, it works if the majority if for some cases it give the right behavior. Well, now
+most of seasoned/experienced engineers know it&amp;#8217;s 100\% stupid and I agree with them. Because I had to take feedback from
+the final client so the specs change constantly and boys the headache it gave me debugging/dealing with broken things.
+It&amp;#8217;s a classical case of inexperience and I learned this lesson so hard now I&amp;#8217;m not even comfortable without unit tests.
+I just don&amp;#8217;t feel safe. I just have to write some tests to sleep better at night.
+There&amp;#8217;s someone like the guy in the first chapter of &amp;#8220;Coders at work&amp;#8221; who just knows that
+his code works but not me, not&amp;nbsp;again.&lt;/p&gt;
+&lt;h2 id="final"&gt;Final&lt;a class="headerlink" href="#final" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Since many have now become a part of your workflow, incorporated with your workstyle you don&amp;#8217;t think much
+about it anymore,  but if I got asked that question again, this would be my&amp;nbsp;answer. &lt;/p&gt;</summary><category term="dev"></category><category term="engineering"></category><category term="mistake"></category><category term="learning"></category></entry><entry><title>Idiomatic C++?</title><link href="http://blog.pdt.space/posts/2015/09/idiomatic-c/" rel="alternate"></link><updated>2015-09-19T19:10:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-09-19:posts/2015/09/idiomatic-c/</id><summary type="html">&lt;p&gt;I first learned programming in C++ and then Java.
+2 years later when I first coded in Python, I still remember being completely amazed by its elegance.
+When a Python program is well written, it&amp;#8217;s always also very easy to read,
+much like natural language, very succinct. Contrary to Java being extremely verbose.
+I believe most of the time a beautiful Python code is also more&amp;nbsp;efficient.&lt;/p&gt;
+&lt;p&gt;The language has evolved over the year yet its &lt;code&gt;Pythonic&lt;/code&gt; way of writing code is somehow
+always there, unlike many other&amp;nbsp;languages.&lt;/p&gt;
+&lt;p&gt;I have read a tons of C++ code, and while I don&amp;#8217;t expect it to be
+&lt;a href="https://en.wikipedia.org/wiki/Literate_programming"&gt;literate programming&lt;/a&gt;
+&lt;!-- it's could not say it's an lovely experience, especially --&gt;
+the experience so far is quite disappointing, especially for non-experienced programmers.
+You have C++99  and then we have the cool &lt;code&gt;modern C++&lt;/code&gt; which comprises of
+&lt;code&gt;C++11, C++14, C++18&lt;/code&gt;. They all have very different, contrast styles. Plus, with heavy use of
+templates in C++, I sometime find myself lost following the ideas behind the code.
+Even with well-written&amp;nbsp;codebase.&lt;/p&gt;
+&lt;p&gt;Fortunately, recently I&amp;#8217;ve found this &lt;a href="https://github.com/isocpp/CppCoreGuidelines"&gt;git repo called C++ guidelines &lt;/a&gt;
+trying to change the situation  by consolidate all the best practices into one place.
+The editors speak for themselves: Herb Sutter \&amp;amp; Bjarne&amp;nbsp;Stroustrup.&lt;/p&gt;
+&lt;p&gt;I find it a very needed move, taken into account that modern C++ style is more and more adopted nowadays
+(I didn&amp;#8217;t know of it when I was in college). After spending some time reading this guides, I&amp;#8217;ve already learned
+quite a&amp;nbsp;lot.&lt;/p&gt;
+&lt;p&gt;However, I don&amp;#8217;t know how long it would take someone like me to change completely the style to adhere the core guidelines,
+even with the best of intentions. You see, with Python after writing a piece of code, you just simply sense 
+if you did something wrong or not, intuitively. Like it looks a bit ugly, or too much verbose, something like
+that, triggering the urge for&amp;nbsp;refactoring.&lt;/p&gt;
+&lt;p&gt;With C++, it&amp;#8217;s just harder. Don&amp;#8217;t get me wrong, unlike many of my friends, I adore C++ and its power.
+Maybe it comes with time, I don&amp;#8217;t know. But I know I&amp;#8217;m going to&amp;nbsp;try.&lt;/p&gt;
+&lt;p&gt;P/S: Since I wrote this I&amp;#8217;ve read quite a lot more about modern C++ from the guidelines
+and the &lt;a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996"&gt;Effective C++ book by Scott Meyers&lt;/a&gt;,
+so far I&amp;#8217;m even more impressed and started to appreciate the &lt;code&gt;Idiomatc C++&lt;/code&gt;. You know when it starts to grow on you.
+Going to C++ meetups at my city obviously also&amp;nbsp;helps.&lt;/p&gt;</summary><category term="dev"></category><category term="cpp"></category><category term="c++"></category><category term="coding-style"></category></entry><entry><title>Some more thoughts from my trip back home</title><link href="http://blog.pdt.space/posts/2015/09/some-more-thoughts-from-my-trip-back-home/" rel="alternate"></link><updated>2015-09-07T18:35:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-09-07:posts/2015/09/some-more-thoughts-from-my-trip-back-home/</id><summary type="html">&lt;p&gt;As I mentioned before, I was avoiding work during my visit back home.
+I called it &amp;#8220;e-detox&amp;#8221;. However, I did try to make some observations on
+how people use tech in their daily life. One thing to note is that
+I wasn&amp;#8217;t able to travel a lot, my I did spend time in multiple cities,
+all of which are big and more developed however (like Sai Gon and Da&amp;nbsp;Nang).&lt;/p&gt;
+&lt;h1 id="people-use-smartphones-everwhere"&gt;People use smartphones everwhere&lt;a class="headerlink" href="#people-use-smartphones-everwhere" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;I usually start my first day in &lt;span class="caps"&gt;VN&lt;/span&gt; by fixing all the mobile devices in my home for
+my family. I counted a grand number of 6. Take my mom for example, before I left
+for college, she was technically useless. Now she was asking me how to integrate
+her credit card to use Uber on her phone (more on this later). My gf, my father,
+my sister and my brother in law all have one or more phones, all but one are&amp;nbsp;smartphones.&lt;/p&gt;
+&lt;p&gt;From those who I interact with, all use smartphone everytime everywhere. Either for
+calling me here in France via skype/viber or send texts to their relatives on &lt;span class="caps"&gt;FB&lt;/span&gt;.
+Most of the devices are Android, with Window Phones behind but you can spot
+quite a lot of iPhones too. People still have some hope in the Nokia brand,
+thus explaining the success of Microsoft/&lt;span class="caps"&gt;WP&lt;/span&gt;&amp;nbsp;here.&lt;/p&gt;
+&lt;h1 id="mobile-plans-are-cheap"&gt;Mobile plans are cheap&lt;a class="headerlink" href="#mobile-plans-are-cheap" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;I find call/data plans rather cheap. You can buy, say &lt;span class="caps"&gt;3GB&lt;/span&gt; of data very easily from
+billions of kiots from the streets. Otherwise you can go to any cafe and enjoy their
+high-speed connection. This is expected, I never saw any cafe without a proper internet
+connection. This is where people to go hangout with their friend next to a cup of coffee,
+surfing the nets and for some, getting some work&amp;nbsp;done.&lt;/p&gt;
+&lt;p&gt;Getting a &lt;span class="caps"&gt;SIM&lt;/span&gt; card is equally easy. I think I paid 10e for my &lt;span class="caps"&gt;SIM&lt;/span&gt; card, with some
+data credit and yet I still had some left. With that price, I could live with
+the connection&amp;nbsp;instability.&lt;/p&gt;
+&lt;p&gt;Most of the people I know use prepaid plan and never on contract, very different from&amp;nbsp;here.&lt;/p&gt;
+&lt;h1 id="fb-is-king"&gt;&lt;span class="caps"&gt;FB&lt;/span&gt; is king&lt;a class="headerlink" href="#fb-is-king" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Everyone&amp;#8217;s on fb, despite all the efforts from the goverment.
+There exist some competition from local services that are quite
+decent like Yalo (that I don&amp;#8217;t use due to privacy concerns)
+and Viber/Skype (for &lt;span class="caps"&gt;OTT&lt;/span&gt; calling/&lt;span class="caps"&gt;SMS&lt;/span&gt;). I don&amp;#8217;t think a lot of people use
+Twitter, yet forums are still very&amp;nbsp;popular.&lt;/p&gt;
+&lt;h1 id="e-commerce-e-payment"&gt;E-commerce / e-payment&lt;a class="headerlink" href="#e-commerce-e-payment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;You have to always have some cash with you. More and more merchandises accept
+cards but far from ubiquitous and the fees are quite excessive. I successfully
+convinced my mom to go to the bank to get a debit card with &lt;span class="caps"&gt;VISA&lt;/span&gt; so see can
+use &lt;span class="caps"&gt;UBER&lt;/span&gt; instead of taxis. Yeah, she hated taxis that much since getting
+an account/card is not an easy task (I&amp;#8217;ll write about my own expereine in the future).
+Then right after that, probably one day or twos, &lt;span class="caps"&gt;UBER&lt;/span&gt; announced they give it up
+and allowed cash for transactions.&amp;nbsp;Well!&lt;/p&gt;
+&lt;p&gt;But of course, she could use the &lt;span class="caps"&gt;VISA&lt;/span&gt; for tons other things. E-commerce is still
+in its very first step of development but has a very bright future. Since cash
+rules, people opt for paying by cash on delivery. I find it rather uncomfortable
+but many really dont trust&amp;nbsp;e-payment.&lt;/p&gt;
+&lt;h1 id="end"&gt;End&lt;a class="headerlink" href="#end" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;I also had a chance to talk to my friend who are very involved in the tech scene in &lt;span class="caps"&gt;VN&lt;/span&gt;.
+They&amp;#8217;re all very optimistic about the future. Smartphones with connection easy to get,
+people being high tech savvy and their very own habits, tons of things waiting
+for being disrupted; all of those shouting&amp;nbsp;potential. &lt;/p&gt;</summary><category term="tech"></category><category term="dev"></category><category term="stuffs"></category></entry><entry><title>The case of Latex in today’s world</title><link href="http://blog.pdt.space/posts/2015/09/the-case-of-latex-in-todays-world/" rel="alternate"></link><updated>2015-09-04T13:04:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-09-04:posts/2015/09/the-case-of-latex-in-todays-world/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Why should we even learn&amp;nbsp;Latex?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That question was raised by a student of my during my class on
+&lt;code&gt;research methodology&lt;/code&gt;. Exactly, we should ask ourself the same thing
+everytime we think about picking a new thing to&amp;nbsp;learn.&lt;/p&gt;
+&lt;p&gt;In this &lt;code&gt;research methodology&lt;/code&gt; class, we discussed about doing research
+in private/public institutions, how one gather and structure information.
+We actually spent quite some time talking about the opensource
+tools and how to produce scientific documents, hence Latex,
+which leads to the question&amp;nbsp;above.&lt;/p&gt;
+&lt;p&gt;None of the student ever used Latex. Some of them know about it, but
+they think it&amp;#8217;s mostly used by academics and broke senior who can&amp;#8217;t
+afford &lt;span class="caps"&gt;MS&lt;/span&gt; Word for writing their thesis. I knew I would have
+a hard time convincing them for using Latex on regular basic.
+Because I personally do not,&amp;nbsp;either.&lt;/p&gt;
+&lt;p&gt;Well, the whole &lt;code&gt;Word vs Latex&lt;/code&gt; has been around forever, much like
+&lt;code&gt;iinux vs windows&lt;/code&gt;, some even claim that writing in words make us
+&lt;a href="http://mappingignorance.org/2015/04/06/word-or-latex-typesetting-which-one-is-more-productive-finally-scientifically-assessed/"&gt;more productive&lt;/a&gt;.
+Obviously I&amp;#8217;m well aware of its superior quality of typography.
+I also know we should worry about structure the content while tweaking the
+the appearance simultaneously. Don&amp;#8217;t worry, I already did my own&amp;nbsp;homework.&lt;/p&gt;
+&lt;p&gt;Usually, one should just say: it depends on what you want to accomplish.
+But truth be told, as much as I&amp;#8217;m impressed with how well it is at rendering
+maths formula, i don&amp;#8217;t find it easy to find a good use case for it beside
+writing scientific&amp;nbsp;documents.&lt;/p&gt;
+&lt;!-- Typically, when you want to publish an article you can go to the he publishers's site --&gt;
+
+&lt;!-- where they already have a styling file available to make ensure the --&gt;
+
+&lt;!-- consitence of the look-and-feel of the submitted works. That way, like mentioned above, --&gt;
+
+&lt;!-- you can worry less about styling your work. --&gt;
+
+&lt;p&gt;Otherwise, every time I need to write a note, there&amp;#8217;s google doc, evernote,
+onenote, handle and a trillions of applications out there. For this blog,
+I use Markdow, a lightway markup language that has much more flexibility to offer.
+So why bother with a language that has a rather steep learning&amp;nbsp;curve?&lt;/p&gt;
+&lt;p&gt;Just yesterday, I learnt about &lt;a href="https://www.madoko.net/"&gt;Madoko&lt;/a&gt; which
+is supposed to allow you to write books, articles with extensive use of
+scientific formulas. As mentioned above, there exist already multiple
+engines/processors that are able to output your &lt;span class="caps"&gt;MD&lt;/span&gt; documents into
+&lt;code&gt;pdf&lt;/code&gt; and &lt;code&gt;html&lt;/code&gt; forms.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s face it, this web-form should be the norms already. Dont get me wrong,
+&lt;code&gt;pdf&lt;/code&gt; is great,for printing but ever try reading on a mobile device?
+Such a painful experience. With recent trends of
+&lt;a href="http://rmarkdown.rstudio.com/"&gt;R markdown&lt;/a&gt;
+and &lt;a href="http://ipython.org/notebook.html"&gt;Python notebooks&lt;/a&gt;, where we can put
+our code snippets with data to make reproducible&amp;nbsp;reports. &lt;/p&gt;
+&lt;p&gt;As some publishers don&amp;#8217;t require the original &lt;code&gt;.tex&lt;/code&gt; as submit, only the final
+pdfs suffice, I expect that the trends continue to grow and take over
+in the near&amp;nbsp;future.&lt;/p&gt;
+&lt;p&gt;So back to the question at the beginning, told my students: &amp;#8220;well, you should
+learn Latex because il will be covered in the Final&amp;nbsp;exams.&amp;#8221;&lt;/p&gt;
+&lt;p&gt;I know,&amp;nbsp;right.&lt;/p&gt;</summary><category term="dev"></category></entry><entry><title>Random thoughts after my trip back to home</title><link href="http://blog.pdt.space/posts/2015/08/random-thoughts-after-my-trip-back-to-home/" rel="alternate"></link><updated>2015-08-30T21:44:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-08-30:posts/2015/08/random-thoughts-after-my-trip-back-to-home/</id><summary type="html">&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;The longer one hesitates before the door the stranger one becomes&amp;#8221;.
+Several weeks ago, after nearly one year, I decided enough is enough and went to buy the plane&amp;nbsp;ticket.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve always thought that home is not fixed to a place but rather where your loved ones are.
+Well, in this case my long-time girl friend and all of my family are currently back in my home&amp;nbsp;country.&lt;/p&gt;
+&lt;p&gt;I had a tremendous time there, letting your guard down being around those you care most about.
+Not to mention food: I could eat properly again. Mom, if you&amp;#8217;re reading this (I highly doubt),
+I really miss your cooking. I also had a chance to catch up with my old friends, see what&amp;#8217;re they up to
+(Ok, i lied, I can do that on facebook too), made some new amazing friends and heard some great stories
+to tell people here in&amp;nbsp;France.&lt;/p&gt;
+&lt;p&gt;During my going flight, I sat next to this young German dude called Tim. Tim is a police office traveling with
+another country fellow whose name I did not catch. Anyway, I learned a great deal about his line of work in Germany
+after our conversations which lasted hours. As Tim &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; his friend traveled with a &amp;#8220;surprise me&amp;#8221; mindset they didn&amp;#8217;t plan
+any thing, at all. So I tried to give him some suggestions and recommendations, you know like what bar to hit and how
+to go around, things like that. I also convinced him to go check-out a striking bay called &amp;#8220;Ha Long&amp;#8221;, a very famous tourist
+destination. The thing is I hadn&amp;#8217;t check the news before that as there were heavy flooding and waste pollution
+from surrounding coal mines that caused around 20 deaths! I tried to warn him by email but I have yet to receive his reply, so i&amp;#8217;m a bit&amp;nbsp;worried.&lt;/p&gt;
+&lt;p&gt;Otherwise, most of the time I tried not to work. It&amp;#8217;s a bit weird since I tend to use my laptop a lot.
+If not in the office, I would be reading something or learning a new stuff or just messing around out of curiosity.
+I would also from time to time help out my girl friend with her work related to programming, mostly &lt;span class="caps"&gt;VBA&lt;/span&gt; stuffs.
+So yeah, it&amp;#8217;s probably the longest period of time I don&amp;#8217;t code over the last few&amp;nbsp;years.&lt;/p&gt;
+&lt;p&gt;But as usual, I did a ton of technical support meaning cleaning home &lt;span class="caps"&gt;PC&lt;/span&gt;, upgrading the machines, installing AdBlocks,
+I even config a new &lt;span class="caps"&gt;PC&lt;/span&gt; for my brother in law&amp;#8217;s company &lt;span class="caps"&gt;PC&lt;/span&gt;. At least, it&amp;#8217;s not via TeamViewer,
+I told to myself so it&amp;#8217;s (probably) all&amp;nbsp;good.&lt;/p&gt;
+&lt;p&gt;Time flies like an arrow, the vacation&amp;#8217;s finally over before I even knew it. I really wished I could stay a bit longer
+so that I could spend more time with my girl friend. Let my tell you one more time: long distance relationship sucks!
+But I guess &amp;#8220;how lucky I am to have something that makes saying goodbye so hard&amp;#8221;, so, thanks for making it a great trip everybody!
+I miss you all (you too Tim, if you&amp;#8217;re still&amp;nbsp;alive)&lt;/p&gt;</summary><category term="stuffs"></category></entry><entry><title>Markov Chain for Text Generation</title><link href="http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/" rel="alternate"></link><updated>2015-07-26T17:43:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-07-26:posts/2015/07/markov-chain-for-text-generation/</id><summary type="html">&lt;p&gt;Yesterday, I stumbled upon &lt;a href="https://www.reddit.com/r/nba/comments/3ei3i7/theres_a_bot_that_comments_as_you_based_on_your/"&gt;this post&lt;/a&gt;
+while browsing reddit on the &lt;span class="caps"&gt;NBA&lt;/span&gt; sub (I&amp;#8217;m a &lt;span class="caps"&gt;NBA&lt;/span&gt; follower).
+In brief, it was about a reddit post that generate gibberish comments based on your
+own activity&amp;nbsp;history.&lt;/p&gt;
+&lt;p&gt;For those who are not familiar with these kind of bots. Basically, they&amp;#8217;re some program
+that systematically scan new posts in certain subreddits (sub-forums kind-of) and
+then trigger some actions based on some pre-defined rules. For example, a bot
+would periodically visit the &lt;code&gt;soccer&lt;/code&gt; subreddit and everytime it see a youtube video posted,
+it would try to download this video and upload to another video services (since youtube is famous, understandably,
+for being very aggressive in video&amp;nbsp;deletion)&lt;/p&gt;
+&lt;p&gt;In this case, if we type a username and then the bot&amp;#8217;s name, the bot would then scan
+the user&amp;#8217;s comment history and generate some funny nonsense comment. It was an instant hit
+due to some gems&amp;nbsp;like&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This comment is so terrible that it might just use him as the primary ball handler
+off the top 5 mid-range shooter in the future.
+Anthony Davis 43 pts / 10 reb / 3 blk. He won&amp;#8217;t be a hall of&amp;nbsp;famer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;or, you know, because it&amp;#8217;s the &lt;span class="caps"&gt;NBA&lt;/span&gt;&amp;nbsp;offseason.&lt;/p&gt;
+&lt;p&gt;How can they do it? Actually it&amp;#8217;s the same way people build &lt;a href="https://en.wikipedia.org/wiki/Mark_V._Shaney"&gt;chatbot&lt;/a&gt; back in the day.
+I think today it&amp;#8217;s getting much more complicated, but maybe they just got more data?
+Either case, the engine&amp;#8217;s behind the scene is something called &lt;a href="https://en.wikipedia.org/wiki/Markov_chain"&gt;&amp;#8220;Markov chain&amp;#8221;&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="markov-model-for-english-text"&gt;Markov model for English text&lt;a class="headerlink" href="#markov-model-for-english-text" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;First, we have to understand the way text/document are models. I&amp;#8217;m definitely not going into details
+here but roughly speaking, a text can be thought as a sequence of words (actually &lt;code&gt;shingles&lt;/code&gt;, but more on that later),
+based on some loosely defined rules. What do I mean by &lt;code&gt;loosely defined&lt;/code&gt;? Let&amp;#8217;s consider this&amp;nbsp;sentence&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I found myself wishing Berg focused more on Brower&amp;#8217;s&amp;nbsp;investigations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, we can think it as a sequence of [&lt;code&gt;I&lt;/code&gt;, &lt;code&gt;found&lt;/code&gt;, &lt;code&gt;myself&lt;/code&gt;, &lt;code&gt;wishing&lt;/code&gt;, &lt;code&gt;Berg&lt;/code&gt;, &lt;code&gt;focused&lt;/code&gt;, &lt;code&gt;more&lt;/code&gt;,
+&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;Brower's&lt;/code&gt;, &lt;code&gt;investigations&lt;/code&gt;]. So if I were a child and that&amp;#8217;s the first time I heard an English
+sentence, since no ones taught me grammar yet, I would think that well, based on my own observation,
+a sentence probably starts always with an &lt;code&gt;I&lt;/code&gt;, and then follows by &lt;code&gt;found&lt;/code&gt;, then &lt;code&gt;myself&lt;/code&gt; and so on.
+Which means here we ignore virtually everything about the grammar (tenses, positions,&amp;nbsp;etc&amp;#8230;).&lt;/p&gt;
+&lt;p&gt;Then maybe after that, I see and hear more and more then probably I would get that sometime there&amp;#8217;re more verbs
+then &lt;code&gt;found&lt;/code&gt;. Probably there&amp;#8217;s a &lt;code&gt;he&lt;/code&gt; or &lt;code&gt;she&lt;/code&gt; which acts as the subject also. More precisely,
+let&amp;#8217;s say I heard another&amp;nbsp;sentence:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I found him to be quite&amp;nbsp;ignorant.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;now, &lt;code&gt;found&lt;/code&gt; is not &lt;strong&gt;always&lt;/strong&gt; followed by &lt;code&gt;myself&lt;/code&gt; but there&amp;#8217;s a 50% chance it&amp;#8217;s a &lt;strong&gt;him&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;What we just described is called 2-order Markov chain model for text generation. Indeed, the &lt;code&gt;1-order&lt;/code&gt; part
+refers to the fact we only use a sequences of pair of consecutive words to form a sentence.
+We look at (&amp;#8216;I&amp;#8217;, &amp;#8216;found&amp;#8217;), then (&amp;#8216;found&amp;#8217;, &amp;#8216;him&amp;#8217;) or (&amp;#8216;found&amp;#8217;, &amp;#8216;myself&amp;#8217;) and so&amp;nbsp;on.&lt;/p&gt;
+&lt;p&gt;So now, it&amp;#8217;s my turn to talk back. I would construct a sentence by &lt;code&gt;chaining&lt;/code&gt; the &amp;#8216;pairs&amp;#8217; together until I hit
+something that marks the end (like &lt;code&gt;.&lt;/code&gt; or &amp;#8216;!&amp;#8217;). More technically correct, after building the model,
+we would obtain a random graph, and in order to generate the text, we perform simply a random walk in this&amp;nbsp;graph.&lt;/p&gt;
+&lt;p&gt;Such pair is often called &amp;#8216;bigram&amp;#8217;, &lt;a href="https://en.wikipedia.org/wiki/N-gram"&gt;more on that here for the general case&lt;/a&gt;.
+People find that an order between &lt;code&gt;2&lt;/code&gt; and &lt;code&gt;5&lt;/code&gt; would get the job done in most&amp;nbsp;cases.&lt;/p&gt;
+&lt;h1 id="how-to-learn-the-model"&gt;How to learn the model?&lt;a class="headerlink" href="#how-to-learn-the-model" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;You may say that it looks quite simplist but it works pretty well in practice. It&amp;#8217;s also quite easy
+to write the code to train the model. We have to split the document into consecutive &lt;code&gt;n-gram&lt;/code&gt; (or shingles)
+and then update the Markov chain&amp;#8217;s parameters, which consist only of the shingle&amp;#8217;s occurrences. Actually,
+we learn the matrix of transition but it&amp;#8217;s not that&amp;nbsp;important.&lt;/p&gt;
+&lt;p&gt;The simplicity is partially due to the way English word separation works. Indeed, in English (or French and many other languages),
+what separates 2 sepaxrate words is either a space or some punctuation (&lt;code&gt;,&lt;/code&gt;, &amp;#8216;.&amp;#8217;, &amp;#8216;!&amp;#8217;, &amp;#8230;). In some other language like
+Vietnamese, it&amp;#8217;d get much more complicated so obtain n-gram since there are composite words, like &amp;#8220;to quoc&amp;#8221; is just a word.
+Actually in English there also &amp;#8220;composite words&amp;#8221; like this, the idea stills hold, we have to take into account the context&amp;nbsp;somehow.&lt;/p&gt;
+&lt;p&gt;You can find much more information on the model on the internet, espcially on the theorical side. It&amp;#8217;s probably the most
+basic model yet gives an important more general idea of how statistical learning approach works in natural langague&amp;nbsp;processing.&lt;/p&gt;
+&lt;h1 id="nba-comment-bots-and-other-applications"&gt;&lt;span class="caps"&gt;NBA&lt;/span&gt; comment bot&amp;#8217;s and other applications&lt;a class="headerlink" href="#nba-comment-bots-and-other-applications" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Applications of such bot are vast. They used to power botchat. The way botchat works are that they already have a trained model,
+it would generate the reply back to you using your sentence as &lt;code&gt;context&lt;/code&gt;. For&amp;nbsp;example,&lt;/p&gt;
+&lt;p&gt;You may&amp;nbsp;say:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let&amp;#8217;s talk about&amp;nbsp;Bush&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;then it would use [&lt;code&gt;talk&lt;/code&gt;, &lt;code&gt;let's&lt;/code&gt;, &amp;#8216;Bush&amp;#8217;] as seeds for the next&amp;nbsp;reply:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bush is no longer in the office, Obama is. (using Bush)
+Let&amp;#8217;s talk about Kim Kardashian instead (using&amp;nbsp;let&amp;#8217;s)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and then use your text to update the model. I&amp;#8217;ve heard some model that&amp;#8217;s trained for decades, wondering around
+in many chat channels, talking with generations of innocent&amp;nbsp;souls!&lt;/p&gt;
+&lt;p&gt;With &lt;span class="caps"&gt;NBA&lt;/span&gt; bot (or twitterbot), the same ideas apply. But if you cross multiple contexts and text, for example
+comment history with something serious such as the Bible, probably it&amp;#8217;d generate some rather amusing result (or offensive, it&amp;nbsp;depends!)&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s also used to generate random fake comments (for example: &lt;code&gt;I heard that this product is pretty great&lt;/code&gt;)
+but I think we should heavily tweak the model in order to bypass the&amp;nbsp;filter.&lt;/p&gt;
+&lt;h1 id="example"&gt;Example:&lt;a class="headerlink" href="#example" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/siolag161/markov_generator"&gt;Here&amp;#8217;s a yet another Markov model I coded in Python &lt;/a&gt; which use the book of Tao as input,&amp;nbsp;generating:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: Is it not because it could not hurt men.
+
+&lt;span class="o"&gt;[&lt;/span&gt;2&lt;span class="o"&gt;]&lt;/span&gt;: The softest thing in the Tao, the more implements to add to his own person last, and &lt;span class="k"&gt;do&lt;/span&gt; not know it.
+
+&lt;span class="o"&gt;[&lt;/span&gt;3&lt;span class="o"&gt;]&lt;/span&gt;: The excellence of a reward &lt;span class="k"&gt;for&lt;/span&gt; the things which I call it The Great.
+
+&lt;span class="o"&gt;[&lt;/span&gt;4&lt;span class="o"&gt;]&lt;/span&gt;: There are few in the world delight to exalt him and &lt;span class="k"&gt;do&lt;/span&gt; not know it.
+
+&lt;span class="o"&gt;[&lt;/span&gt;5&lt;span class="o"&gt;]&lt;/span&gt;: Therefore when one knows that the ancients prized this Tao, the more.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it trains the model only in memory. If you want to train the model for years like those chatbots, you should have a database.
+Probably just a lightweight one&amp;nbsp;suffices.&lt;/p&gt;</summary><category term="nlp"></category><category term="dev"></category><category term="model"></category><category term="markov"></category></entry><entry><title>The Game of Git</title><link href="http://blog.pdt.space/posts/2015/07/the-game-of-git/" rel="alternate"></link><updated>2015-07-20T23:12:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-07-20:posts/2015/07/the-game-of-git/</id><summary type="html">&lt;p&gt;This site is hosted on github pages, which means I gotta know a thing or two about git.
+I actually use git everyday for my work, typing hundreds of commands but most of them
+are from a select few: &lt;code&gt;checkout&lt;/code&gt;, &lt;code&gt;diff&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;, &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;commit&lt;/code&gt;, &lt;code&gt;checkout&lt;/code&gt;, &lt;code&gt;push&lt;/code&gt;, &lt;code&gt;pull&lt;/code&gt;.
+Sometimes you take it for granted and then you&amp;#8217;d be getting right into troubles. I don&amp;#8217;t think
+&lt;code&gt;git&lt;/code&gt; is difficult, making the most out of it, on the other hand is. Also,
+&lt;a href="https://xkcd.com/1296/"&gt;making meaningful&amp;nbsp;comments&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Today I discovered &lt;a href="https://github.com/git-game/git-game"&gt;this repo&lt;/a&gt; which is meant to be a game
+for you to refresh your github knowledge in a fun way. I gave it a try and find indeed rather amusing.
+Quite short though, takes you 5-10mins&amp;nbsp;max.&lt;/p&gt;</summary><category term="dev"></category><category term="git"></category><category term="source-control"></category></entry><entry><title>Music for coding</title><link href="http://blog.pdt.space/posts/2015/07/music-for-coding/" rel="alternate"></link><updated>2015-07-15T12:39:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-07-15:posts/2015/07/music-for-coding/</id><summary type="html">&lt;p&gt;Today I f* up by breaking my beloved headphone Sennheiser &lt;span class="caps"&gt;HD&lt;/span&gt; 449. Using it virtually
+everyday for the last 4 years, it saddens me. I&amp;#8217;m really fond of this model for various
+reasons. It&amp;#8217;s extremely light and confortable, you can wear it for hours without feeling
+anything. It does a decent job isolating
+the sound, not as extreme as blocking anything so you can still sense the world
+around you. While i&amp;#8217;m not anywhere near being an expert, I find the headphone
+quite versatile, meaning I can listen to a very wide range and find the sound quality
+delivered impressive most of the&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;Being someone who always listen to &lt;code&gt;something&lt;/code&gt; while working, I don&amp;#8217;t waste a lot of
+time before searching for a new one. Some of my principal criteria&amp;nbsp;are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Confort: It should be over-the ear so it doesn&amp;#8217;t hurt
+your head/ear (though I&amp;#8217;ve heard some on-ear models are extremely light they can
+do the work&amp;nbsp;too).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Isolation: It should be able to to a decent job at this, as mentioned above. I don&amp;#8217;t
+want to disburb others, for example in the bus or at&amp;nbsp;workplace.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I wear glasses, so sometimes on-ear is more confortable. Over-the-ears tend to leak
+sound if you wear thick glasses, so gotta take that into account&amp;nbsp;too.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mic: It should have an in-line mic, or at least should not intefere with the phone&amp;#8217;s mic.
+This is where the &lt;span class="caps"&gt;HD&lt;/span&gt;-449 sucks. I don&amp;#8217;t know where the issue is but whenever I try
+to answer call with my (now-deceased) headphone, the other one could not hear a thing.
+Maybe it blocks the Nexus 5 mic, I don&amp;#8217;t&amp;nbsp;know.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Build-quality: i&amp;#8217;m looking for something that lasts for&amp;nbsp;years.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those being said, for the time being, I think I&amp;#8217;ll go with the &lt;span class="caps"&gt;AKG&lt;/span&gt;&amp;nbsp;K545. &lt;/p&gt;
+&lt;p&gt;Typically I don&amp;#8217;t listen to anything with lyrics while working. Sometimes I go with
+natural noises like rain (&lt;a href="http://www.rainymood.com/"&gt;rainymood&lt;/a&gt; for example);
+othewise I&amp;#8217;d go with &lt;a href="http://www.di.fm/chillout/"&gt;chillout music&lt;/a&gt;;
+Classical work great too, I usually go with Bach; Once in a while I play
+&lt;a href="https://www.youtube.com/watch?v=Ziw4yd5R0QI"&gt;Explosions in the sky&lt;/a&gt; or
+&lt;a href="https://www.youtube.com/watch?v=JbnhjsDI_ho"&gt;Mono&lt;/a&gt;. The latter band is recommended to me
+by my&amp;nbsp;ex.&lt;/p&gt;</summary><category term="dev"></category><category term="stuff"></category><category term="music"></category></entry><entry><title>Label matching for clustering evaluation</title><link href="http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/" rel="alternate"></link><updated>2015-07-10T11:20:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-07-10:posts/2015/07/label-matching-for-clustering-evaluation/</id><summary type="html">&lt;p&gt;Let&amp;#8217;s say we perform a cluster analysis on the dataset using a fancy algorithm
+and we would like to know whether it performs well. If we&amp;#8217;re really lucky and
+have at disposal the ground truth (&lt;span class="caps"&gt;GT&lt;/span&gt;), we can check if the result we obtained (&lt;span class="caps"&gt;CT&lt;/span&gt;) with
+the clustering algorithm are &lt;code&gt;similar&lt;/code&gt; to the said ground truth. What this means
+is that &lt;strong&gt;&lt;span class="caps"&gt;GT&lt;/span&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;span class="caps"&gt;CT&lt;/span&gt;&lt;/strong&gt; should agree most of the time (relatively speaking) whether to
+group two objects in a same group or in two seperate ones. In other words, they should
+have a high degree of&amp;nbsp;agreement.&lt;/p&gt;
+&lt;p&gt;There&amp;#8217;re several approaches to quantify the degree of agreement. Here since we know
+the ground truth, we could use &lt;a href="https://en.wikipedia.org/wiki/Cluster_analysis#External_evaluation"&gt;external measures&lt;/a&gt;.
+Among these, there&amp;#8217;s this particular method based on &lt;code&gt;confusion matrix&lt;/code&gt; which is very widely used in classification,
+to show how much &lt;strong&gt;&lt;span class="caps"&gt;CT&lt;/span&gt;&lt;/strong&gt; is different from &lt;strong&gt;&lt;span class="caps"&gt;GT&lt;/span&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id="confustion-matrix"&gt;Confustion matrix&lt;a class="headerlink" href="#confustion-matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;How to construct a such confusion matrix from &lt;strong&gt;&lt;span class="caps"&gt;CT&lt;/span&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;span class="caps"&gt;GT&lt;/span&gt;&lt;/strong&gt;? One common way, from classification, is to
+first represent a clustering as an array, mapping each object to the cluster it belongs to, like&amp;nbsp;so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;here we have 2 clusterings of 3 clusters on 6 objects. So we have 2 arrays of the same length and
+the same cardinality &lt;code&gt;T&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The confusion matrix has then a dimension of &lt;code&gt;TxT&lt;/code&gt; where each &lt;code&gt;(i,j)&lt;/code&gt; is
+the number that &lt;strong&gt;&lt;span class="caps"&gt;GT&lt;/span&gt;&lt;/strong&gt; classifies as &lt;code&gt;i&lt;/code&gt; while &lt;strong&gt;&lt;span class="caps"&gt;CT&lt;/span&gt;&lt;/strong&gt; classifies as &lt;code&gt;j&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id="problem-of-label-meaning"&gt;Problem of label meaning&lt;a class="headerlink" href="#problem-of-label-meaning" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The deal with this approach is that it doesn&amp;#8217;t work as properly in cluster analysis as in classification because
+in classification each class has an underlying meaning, such as &amp;#8216;dog&amp;#8217; and &amp;#8216;cat&amp;#8217;, for example; wheareas in clustering
+if we any permutation of the classes would&amp;nbsp;do.&lt;/p&gt;
+&lt;p&gt;For example, if we compute the accuracy for these two&amp;nbsp;clusterings:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it would yield a value of &lt;code&gt;0.0&lt;/code&gt;!! but in reality it perfectly agrees on how to group objects in categories. So
+we got it totally&amp;nbsp;wrong.&lt;/p&gt;
+&lt;h1 id="label-matching"&gt;Label matching&lt;a class="headerlink" href="#label-matching" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The naive way is to consider all the label permutations possible for
+&lt;strong&gt;&lt;span class="caps"&gt;CT&lt;/span&gt;&lt;/strong&gt; and compares it with &lt;strong&gt;&lt;span class="caps"&gt;GT&lt;/span&gt;&lt;/strong&gt; and pick the one that minimizes the error.
+Look at the example above. In the &lt;code&gt;(2)&lt;/code&gt; clustering, if we change the label &lt;code&gt;1&lt;/code&gt;
+to &lt;code&gt;0&lt;/code&gt; while fixing the rest labeling, we can see that we now have a
+better result, in term of similarity to &lt;code&gt;(1)&lt;/code&gt;. It would not suffice however, under
+&lt;!&amp;#8212; our conditions (the 2 label sets must match) we have to also assign &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;1&lt;/code&gt; &amp;#8212;&gt;.
+if we continue and assign &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;1&lt;/code&gt; we can get even a better&amp;nbsp;labeling.&lt;/p&gt;
+&lt;!-- But by how much did we improve? --&gt;
+
+&lt;!-- Let's say we have 2 clustering `C1` and `C2`, --&gt;
+
+&lt;!-- Indeed, one way to measure the distance between 2 clusterings is to count the  --&gt;
+
+&lt;!-- We first define a cost function `f(c1, c2)` --&gt;
+
+&lt;p&gt;In reality we can do better than the brute force approach. Our problem is actually
+equivalent to the &lt;a href="https://en.wikipedia.org/wiki/Assignment_problem#Algorithms_and_generalizations"&gt;assigment problem&lt;/a&gt;
+in which we assign labels to labels. We need to compute the cost matrix, however.
+This is the complement of the gain matrix whose element &lt;code&gt;(i,j)&lt;/code&gt; is the number of
+items that is classified as &lt;code&gt;i&lt;/code&gt;in the first labeling and as &lt;code&gt;j&lt;/code&gt; in the second&amp;nbsp;one.&lt;/p&gt;
+&lt;h1 id="demonstration-using-hungarian-solver"&gt;Demonstration using &lt;a href="https://en.wikipedia.org/wiki/Hungarian_algorithm"&gt;Hungarian solver&lt;/a&gt;&lt;a class="headerlink" href="#demonstration-using-hungarian-solver" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Here is a gist for matching label of a clustering obtained by &lt;code&gt;K-means&lt;/code&gt; to the
+ground truth, on the famous &lt;code&gt;Iris&lt;/code&gt; dataset using the Hungarian algorithm,
+also called&amp;nbsp;Munkres.&lt;/p&gt;
+&lt;p&gt;We need the &lt;code&gt;numpy&lt;/code&gt;, &lt;code&gt;scipy&lt;/code&gt; and the &lt;a href="https://github.com/bmc/munkres"&gt;Munkres&amp;nbsp;package&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src="https://gist.github.com/siolag161/dc6e42b64e1bde1f263b.js"&gt;&lt;/script&gt;&lt;/p&gt;</summary><category term="dev"></category><category term="code"></category><category term="python"></category><category term="clustering"></category></entry><entry><title>Python matrix initialization</title><link href="http://blog.pdt.space/posts/2015/07/python-matrix-initialization/" rel="alternate"></link><updated>2015-07-09T14:55:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-07-09:posts/2015/07/python-matrix-initialization/</id><summary type="html">&lt;h1 id="problem"&gt;Problem&lt;a class="headerlink" href="#problem" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Yesterday I was doing some data analysis where there&amp;#8217;s a intermediary step I had to store the result in a matrix of fixed size that
+we know a priori. When it finished the calculation, I looked up to see it had given an very unexpected result. After
+spending sometime trying to track the issue down, it turned out that there&amp;#8217;s a line where I initialized the matrix
+like&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;NROWS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;NCOLS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;NCOLS&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;NROWS&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;what&amp;#8217;s wrong with this line is that it translates equivalently&amp;nbsp;to&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;NROWS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;NCOLS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;NCOLS&lt;/span&gt;
+&lt;span class="n"&gt;mat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;NROWS&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;mat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;so we got a matrix in which all the rows refer to the same list. To illustrate the&amp;nbsp;problem:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;
+&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;
+&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Apparently, this behavior it&amp;#8217;s pretty well-known among python&amp;nbsp;dev.&lt;/p&gt;
+&lt;h1 id="how-to-fix-this"&gt;How to fix this?&lt;a class="headerlink" href="#how-to-fix-this" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;There&amp;#8217;re several ways actually. For example we can use list comprehension like&amp;nbsp;so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;NROWS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;NCOLS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;NCOLS&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;NROWS&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;
+&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;2.5&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;mat&lt;/span&gt;
+&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I ended up using the &lt;code&gt;numpy.zeros()&lt;/code&gt; function which I should have had done in the first place since the matrix would
+eventually be converted into &lt;code&gt;numpy.array&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Every language has its moments of &lt;code&gt;gotcha&lt;/code&gt;, as we grow more experienced, we will
+get less error-prone. In &lt;code&gt;python&lt;/code&gt; in particular, I also find the following
+&lt;a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113198"&gt;regarding the mutable default arguments&lt;/a&gt;
+very&amp;nbsp;interesting. &lt;/p&gt;</summary><category term="python"></category><category term="code"></category><category term="bug"></category></entry><entry><title>My setup for this very blog</title><link href="http://blog.pdt.space/posts/2015/06/my-setup-for-this-very-blog/" rel="alternate"></link><updated>2015-06-20T22:22:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-06-20:posts/2015/06/my-setup-for-this-very-blog/</id><summary type="html">&lt;p&gt;Tonight is a quiet lonely night and I&amp;#8217;m in the mood for writing something, anything really. Normally I would love to
+talk a bit about politics or history, but I have this priviledge coming from a communist country
+where these kinds of stuffs would get you into troubles. So I guess writing a bit on how I get this blog
+up and running might not be a bit &lt;em&gt;less complicated&lt;/em&gt;.&lt;/p&gt;
+&lt;h1 id="how-to-get-started"&gt;How to get started&lt;a class="headerlink" href="#how-to-get-started" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://blog.pdt.space/posts/2015/03/my-first-post-ever/"&gt;As mentioned earlier&lt;/a&gt;, this very blog was setup using the Pelican
+static blog engine. As Pelican is quite popular, especially among Python fans (albeit not as popular
+as its eternal enemy jekyll), there&amp;#8217;s no lack of &lt;a href="http://nafiulis.me/making-a-static-blog-with-pelican.html"&gt;great&lt;/a&gt;
+&lt;a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/"&gt;tutorials&lt;/a&gt; out there helping you to get&amp;nbsp;started.&lt;/p&gt;
+&lt;p&gt;Google it, you say? Well, obviously it might feel a bit overwhelming at first for those who do not have prior background in web dev.
+But believe me once you&amp;#8217;re get your basic config up, you&amp;#8217;ll then get comfortable very quickly and everything
+takes off from&amp;nbsp;there.&lt;/p&gt;
+&lt;p&gt;For me, the most important thing with blogging with Pelican (or any static engine for that matters)
+consists in finding a workflow that works for you. If you don&amp;#8217;t have one yet, well it&amp;#8217;s a great time
+to pick one and&amp;nbsp;learn!&lt;/p&gt;
+&lt;p&gt;Regardless of the workflow choice, it should enable you to at least do these following&amp;nbsp;tasks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Preview the content of your posts and/or your site&amp;nbsp;(*)&lt;/li&gt;
+&lt;li&gt;Push the changes to the server&amp;nbsp;(**)&lt;/li&gt;
+&lt;li&gt;Customizing the feel and look of your blog&amp;nbsp;(***)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I personally find the &lt;a href="http://nafiulis.me/making-a-static-blog-with-pelican.html"&gt;post by nafiulis&lt;/a&gt;
+very comprehensive. Go read it and follows his instructions if you have no clues, highly&amp;nbsp;recommended!&lt;/p&gt;
+&lt;h1 id="my-own-setup"&gt;My own setup&lt;a class="headerlink" href="#my-own-setup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="how-blogging-with-pelican-works-again"&gt;How blogging with Pelican works again?&lt;a class="headerlink" href="#how-blogging-with-pelican-works-again" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When working with Pelican, you write not in &lt;span class="caps"&gt;HTML&lt;/span&gt; directly but in some markup language like Markdown or
+reStructuredText. Pelican will take care of compiling the content that you write into &lt;span class="caps"&gt;HTML&lt;/span&gt;, coupled with
+the style defined in your chosen theme to render the fancy blog posts. It comes with a default one, so need
+to get your hand&amp;nbsp;dirty.&lt;/p&gt;
+&lt;h2 id="previewing-content"&gt;Previewing content&lt;a class="headerlink" href="#previewing-content" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When you first install Peliacan, it typically gives you a choice between a makefile and a Fabric script
+for automating all the repetitive tasks. Either one allows you to take a peek before the post goes out into the wild.
+More technically, it launches a local web server allowing you to see your site with the newly added posts.
+Sounds great, battery included!  Bad new is every time you make some changes to your liking, let it be customizing your
+theme or update the post, the server will not be aware of this yet and you have to refresh the browser manually. So much&amp;nbsp;hassle.&lt;/p&gt;
+&lt;!-- So there are several ways to solve this. For example one can use a text editor capable of automatically --&gt;
+
+&lt;!-- render the post lik --&gt;
+
+&lt;p&gt;e
+Obviously there are text editor our there that can help you do this automatically like &lt;a href=""&gt;Atom&lt;/a&gt; which gives you the a of the result &lt;span class="caps"&gt;HTML&lt;/span&gt;.
+The incovenience is that it may not be able to take into account the look and feel from your blog&amp;#8217;s current&amp;nbsp;theme.&lt;/p&gt;
+&lt;p&gt;Like many other, my approach is to use an automate tool like &lt;a href=""&gt;Gulp&lt;/a&gt; or &lt;a href=""&gt;Grunt&lt;/a&gt; since I was already using one.
+The learning curve is rather steep, but after you set them up, you&amp;#8217;ll never have to look back. The concecus now is apparently 
+&lt;a href=""&gt;Gulp&lt;/a&gt;. So if you&amp;#8217;ve never heard of either of them, it may be a great time to&amp;nbsp;learn.&lt;/p&gt;
+&lt;h2 id="pushing-your-posts-to-the-server"&gt;Pushing your posts to the server&lt;a class="headerlink" href="#pushing-your-posts-to-the-server" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Fully disclose, I host this blog that no one reads without paying a dime at &lt;a href=""&gt;Github Pages&lt;/a&gt;.
+If you have never heard of github (or git), again seriously man go learn
+at least the basics of them Once you get the principle ideas already, now we are presented with
+different strategies to deploy our&amp;nbsp;posts.&lt;/p&gt;
+&lt;p&gt;We can render locally to &lt;span class="caps"&gt;HTML&lt;/span&gt; and push the changes to the distant server (by our friend at github
+in my case). Or we can use the technique described &lt;a href="http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html"&gt;
+here&lt;/a&gt;.
+You see, regardless of strategies, we still need to use git (or mercurial but no &lt;span class="caps"&gt;CVS&lt;/span&gt;, thanks) to
+version-control our content. The later approach allows to leverage TravisCI and git-hooks to detect
+every time we push the markup code to our github repo, then compile and push the rendered content
+to the github page branch. Very nice and clean&amp;nbsp;method.&lt;/p&gt;
+&lt;h2 id="customizing-the-looks-and-feels"&gt;Customizing the looks and feels&lt;a class="headerlink" href="#customizing-the-looks-and-feels" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This parts requires some basic knowledge of &lt;span class="caps"&gt;CSS&lt;/span&gt; and &lt;span class="caps"&gt;HTML&lt;/span&gt;, you just can expect to get around it
+and be alive. Again, if you opt for the Grunt (Gulp) solution, you should be fine here
+as Grunt/Gulp will capture any modifications you make to reflect on the theme and allow you
+to preview before going live. I normally don&amp;#8217;t do &lt;span class="caps"&gt;CSS&lt;/span&gt; directly but use &lt;span class="caps"&gt;SASS&lt;/span&gt; instead, so an automation
+tool is a must for me as no sane men compile them&amp;nbsp;manually.&lt;/p&gt;
+&lt;h2 id="the-most-important-part-writing"&gt;The most important part: writing&lt;a class="headerlink" href="#the-most-important-part-writing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You gotta agree with me here, being able to update your site requires more time than setting it up.
+This is the most important part in your workflow yet no tools could help you&amp;nbsp;with!&lt;/p&gt;</summary><category term="blog"></category><category term="misc"></category></entry><entry><title>C++ environnement setup</title><link href="http://blog.pdt.space/posts/2015/03/c-environnement-setup/" rel="alternate"></link><updated>2015-03-18T14:03:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-03-18:posts/2015/03/c-environnement-setup/</id><summary type="html">
+&lt;h1 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This document details how to setup a modern C++ environnement in Linux (based on the version of EarthServer)&lt;/p&gt;
+&lt;h1 id="upgrade-distribution"&gt;Upgrade distribution&lt;a class="headerlink" href="#upgrade-distribution" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get update
+sudo apt-get upgrade
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="install-cmake"&gt;Install cmake&lt;a class="headerlink" href="#install-cmake" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install cmake
+sudo apt-get install automake autoconf
+sudo apt-get install build-essential bzip2 lynx zile zlib1g-dev git unzip
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="install-gcc-49-from-source"&gt;Install &lt;span class="caps"&gt;GCC&lt;/span&gt;-4.9 From Source&lt;a class="headerlink" href="#install-gcc-49-from-source" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    sudo apt-get install libgmp3-dev libgmp-dev libmpfr-dev libmpc-dev flex bison libc6-dev gcc-multilib
+
+    sudo mkdir /gcc
+    sudo chmod &lt;span class="m"&gt;777&lt;/span&gt; /gcc
+    svn co svn://gcc.gnu.org/svn/gcc/trunk /gcc
+
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /gcc
+    ./contrib/download_prerequisites
+
+    mkdir /gcc/objdir
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /gcc/objdir
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="configure-gcc-build"&gt;configure gcc build:&lt;a class="headerlink" href="#configure-gcc-build" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;View configuration flags used to build the distro version of gcc:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;gcc -v
+../configure -v --enable-languages&lt;span class="o"&gt;=&lt;/span&gt;c,c++,go --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr --program-suffix&lt;span class="o"&gt;=&lt;/span&gt;-4.9 --enable-shared --enable-linker-build-id --libexecdir&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib --without-included-gettext --enable-threads&lt;span class="o"&gt;=&lt;/span&gt;posix --libdir&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib --with-sysroot&lt;span class="o"&gt;=&lt;/span&gt;/ --enable-clocale&lt;span class="o"&gt;=&lt;/span&gt;gnu --enable-libstdcxx-time&lt;span class="o"&gt;=&lt;/span&gt;yes --enable-gnu-unique-object --enable-plugin --with-system-zlib --disable-ppl-version-check --disable-multilib --enable-checking&lt;span class="o"&gt;=&lt;/span&gt;release --build&lt;span class="o"&gt;=&lt;/span&gt;x86_64-linux-gnu --host&lt;span class="o"&gt;=&lt;/span&gt;x86_64-linux-gnu --target&lt;span class="o"&gt;=&lt;/span&gt;x86_64-linux-gnu
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="build-and-install"&gt;build and install:&lt;a class="headerlink" href="#build-and-install" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
+sudo ln -s /usr/lib/x86_64-linux-gnu /usr/lib64     
+make -j 8
+sudo make install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="update-the-gcc-and-g-symbolic-links"&gt;Update the gcc and g++ symbolic links&lt;a class="headerlink" href="#update-the-gcc-and-g-symbolic-links" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    sudo update-alternatives --remove-all gcc
+    sudo update-alternatives --remove-all g++
+
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
+    sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+
+    sudo update-alternatives --config gcc
+    sudo update-alternatives --config g++
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="test-g-49"&gt;Test g++ 4.9&lt;a class="headerlink" href="#test-g-49" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;edit /tmp/generalized-lambda.cpp:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include &amp;lt;algorithm&amp;gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kt"&gt;size_t&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;auto&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]()&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}();&lt;/span&gt;  &lt;span class="c1"&gt;// Updates ::x to 6, and initializes y to 7.&lt;/span&gt;
+
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kt"&gt;size_t&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kt"&gt;size_t&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;" "&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Build and run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp&lt;span class="p"&gt;;&lt;/span&gt; g++-4.9 -std&lt;span class="o"&gt;=&lt;/span&gt;c++1y generalized-lambda.cpp&lt;span class="p"&gt;;&lt;/span&gt; ./a.out
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Verify which libraries we are linking against:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ldd a.out
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="install-clang"&gt;Install Clang&lt;a class="headerlink" href="#install-clang" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;download and build clang from source&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo mkdir /llvm
+sudo chmod &lt;span class="m"&gt;777&lt;/span&gt; /llvm
+&lt;span class="nb"&gt;cd&lt;/span&gt; /llvm
+svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;llvm/tools/
+svn co http://llvm.org/svn/llvm-project/cfe/trunk clang
+&lt;span class="nb"&gt;cd&lt;/span&gt; ../..
+&lt;span class="nb"&gt;cd &lt;/span&gt;llvm/tools/clang/tools
+svn co http://llvm.org/svn/llvm-project/clang-tools-extra/trunk extra
+&lt;span class="nb"&gt;cd&lt;/span&gt; ../../../..
+&lt;span class="nb"&gt;cd &lt;/span&gt;llvm/projects
+svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+&lt;span class="nb"&gt;cd&lt;/span&gt; ../..
+mkdir build
+&lt;span class="nb"&gt;cd &lt;/span&gt;build
+../llvm/configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/llvm --bindir&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/llvm/bin --enable-cxx11 --enable-optimized &lt;span class="nv"&gt;CXX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/g++ &lt;span class="nv"&gt;CC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/gcc
+
+make -j 8
+
+sudo make install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;edit ~/.bashrc to add /usr/local/llvm/bin to your path and set &lt;span class="caps"&gt;CC&lt;/span&gt; and &lt;span class="caps"&gt;CXX&lt;/span&gt; accordingly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:/usr/local/llvm/bin
+
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/llvm/bin/clang
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CXX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/llvm/bin/clang++
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Reload .bashrc&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;. ~/.bashrc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="test-clang"&gt;Test clang&lt;a class="headerlink" href="#test-clang" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;edit /tmp/thread.cpp:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include &amp;lt;thread&amp;gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;thread_local&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;newval&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;newval&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;threadfunc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+    &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kr"&gt;thread&lt;/span&gt; &lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;threadfunc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kr"&gt;thread&lt;/span&gt; &lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;threadfunc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="kr"&gt;thread&lt;/span&gt; &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;threadfunc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;build and run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+clang++ -std&lt;span class="o"&gt;=&lt;/span&gt;c++11 -fsanitize&lt;span class="o"&gt;=&lt;/span&gt;memory -fno-omit-frame-pointer -O1 -g -fno-optimize-sibling-calls -pthread thread.cpp
+/tmp/a.out
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="install-boost"&gt;Install Boost&lt;a class="headerlink" href="#install-boost" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="install-additional-libs"&gt;install additional libs:&lt;a class="headerlink" href="#install-additional-libs" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install libicu-dev libicu48 zlib1g zlib1g-dev libbz2 libbz2-dev libbz2-1.0 python-dev
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="remove-current-boost-installation"&gt;remove current boost installation:&lt;a class="headerlink" href="#remove-current-boost-installation" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get --purge remove libboost*
+sudo rm -rf /usr/include/boost
+sudo rm -rf /usr/lib/libboost*
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="install-boost-157-from-source"&gt;install boost 1.57 from source&lt;a class="headerlink" href="#install-boost-157-from-source" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo mkdir /libboost
+sudo chmod &lt;span class="m"&gt;777&lt;/span&gt; /libboost/
+&lt;span class="nb"&gt;cd&lt;/span&gt; /libboost/
+wget &lt;span class="s1"&gt;'http://sourceforge.net/projects/boost/files/boost/1.57.0/boost_1_57_0.tar.gz/download'&lt;/span&gt; -O boost_1_57.tar.gz
+tar -xzvf boost_1_57.tar.gz
+&lt;span class="nb"&gt;cd &lt;/span&gt;boost_1_57_0
+./bootstrap.sh --with-toolset&lt;span class="o"&gt;=&lt;/span&gt;gcc --with-libraries&lt;span class="o"&gt;=&lt;/span&gt;all  --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr
+./b2 --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr &lt;span class="nv"&gt;toolset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;gcc &lt;span class="nv"&gt;cxxflags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-std=c++11"&lt;/span&gt; &lt;span class="nv"&gt;threading&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;multi segmented-stacks&lt;span class="o"&gt;=&lt;/span&gt;on &lt;span class="nv"&gt;link&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;static
+sudo ./b2 --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr &lt;span class="nv"&gt;toolset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;gcc &lt;span class="nv"&gt;cxxflags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-std=c++11"&lt;/span&gt; &lt;span class="nv"&gt;threading&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;multi segmented-stacks&lt;span class="o"&gt;=&lt;/span&gt;on &lt;span class="nv"&gt;link&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;static install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="test-boost"&gt;test boost:&lt;a class="headerlink" href="#test-boost" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;edit /tmp/regex.cpp:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;boost/regex.hpp&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include &amp;lt;string&amp;gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;boost&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="n"&gt;pat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s"&gt;"^Subject: (Re: |Aw: )*(.*)"&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;getline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;boost&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;smatch&lt;/span&gt; &lt;span class="n"&gt;matches&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;boost&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;regex_match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;matches&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pat&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;matches&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+ &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;build and run with gcc:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+g++ -std&lt;span class="o"&gt;=&lt;/span&gt;c++11 regex.cpp  -lboost_regex
+./a.out
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;build and run with clang:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+clang++ -std&lt;span class="o"&gt;=&lt;/span&gt;c++11 regex.cpp  -lboost_regex
+./a.out
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="dev"></category><category term="env"></category><category term="workflow"></category></entry><entry><title>My first post ever</title><link href="http://blog.pdt.space/posts/2015/03/my-first-post-ever/" rel="alternate"></link><updated>2015-03-16T12:32:00+07:00</updated><author><name>pdt</name></author><id>tag:blog.pdt.space,2015-03-16:posts/2015/03/my-first-post-ever/</id><summary type="html">&lt;h1 id="goodbye-wordpress"&gt;Goodbye Wordpress&lt;a class="headerlink" href="#goodbye-wordpress" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;It&amp;#8217;s been a while since last time I blogged, with Wordpress actually. It needs to be said, however, that I actually like Wordpress as a whole. It&amp;#8217;s a very versatile engine which serves many purposes and does it pretty well. I also have set up some sites of all kinds using this platform for my friends and would probably choose this it if asked&amp;nbsp;again.&lt;/p&gt;
+&lt;p&gt;The thing is I know absolutely nothing about &lt;span class="caps"&gt;PHP&lt;/span&gt;, so I have to rely 100% on plugins to survive. So with time it becomes more and more bloated and sometimes they don&amp;#8217;t seem to play nice with each others. After a while I just grew too tired and throw my tower because I spent more time dealing with these issues I don&amp;#8217;t understand instead of writing. Last but not least I&amp;#8217;ve often had trouble with their &lt;span class="caps"&gt;WISIWIG&lt;/span&gt; editor while online, especially when it comes to writing&amp;nbsp;code/maths.&lt;/p&gt;
+&lt;h1 id="comes-pelican"&gt;Comes Pelican&lt;a class="headerlink" href="#comes-pelican" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;I first encountered the world of blog powered by static site generation several years ago when I wrote code an app in Python and learned to use Sphinx for documentation (docutils. I really like the idea of static site generator and I find it to be the perfect fit for writing documents like blog. The only problem I had with Sphinx is its &lt;span class="caps"&gt;RST&lt;/span&gt; (reStructuredText)&amp;nbsp;syntax.&lt;/p&gt;
+&lt;p&gt;Recently, I rediscover Pelican - the Python generator which allows you to write in either &lt;span class="caps"&gt;RST&lt;/span&gt; or Markdown( similar to the one used by Github for documentation - actually they are powered by Jenkyll the Ruby counterpart of&amp;nbsp;Pelican).&lt;/p&gt;
+&lt;h1 id="advantages-of-pelican"&gt;Advantages of Pelican&lt;a class="headerlink" href="#advantages-of-pelican" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;There are plenty, you can google it to see all the praises for yourself. Personally, as I&amp;#8217;ve already had django/jinja knowledge and python experience, I could do pretty much everything I want (but you have to note that I don&amp;#8217;t need that much! a theme, commenting system provided by Disqus and it&amp;#8217;s good to&amp;nbsp;go)&lt;/p&gt;
+&lt;p&gt;It takes me about an hour or two for setting up the whole thing (not including &lt;span class="caps"&gt;DNS&lt;/span&gt; propagation) for the site to go up. It is hosted freely by Github pages and published automatically every time I push to the master branch ( so pushes to other branches are considered as&amp;nbsp;drafts). &lt;/p&gt;
+&lt;p&gt;Later I may talk in details about how I setup my workflow ( I use the same for pretty much every web project) which may come in handy for&amp;nbsp;some.&lt;/p&gt;</summary><category term="dev"></category><category term="post"></category></entry></feed>

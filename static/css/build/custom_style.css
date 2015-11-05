@@ -1,0 +1,19 @@
+/* line 2, /home/travis/build/siolag161/blog/content/static/css/scss/custom_style.scss */
+.toc ul {
+  list-style-type: none; }
+
+/* line 7, /home/travis/build/siolag161/blog/content/static/css/scss/custom_style.scss */
+a.headerlink {
+  visibility: hidden;
+  padding-left: 0.5em;
+  color: grey; }
+
+/* line 14, /home/travis/build/siolag161/blog/content/static/css/scss/custom_style.scss */
+.gist-syntax .highlight pre {
+  background: #fff;
+  color: #333; }
+
+/* line 20, /home/travis/build/siolag161/blog/content/static/css/scss/custom_style.scss */
+p {
+  font-size: 18px; }
+/*# sourceMappingURL=custom_style.css.map */

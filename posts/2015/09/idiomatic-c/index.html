@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Idiomatic C++? - pdt's Blog!</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  -->
+
+    <link href="http://blog.pdt.space/extras/favicon" rel="icon">
+
+<link rel="canonical" href="http://blog.pdt.space/posts/2015/09/idiomatic-c/">
+
+        <meta name="author" content="pdt" />
+        <meta name="keywords" content="dev,cpp,c++,coding-style" />
+        <meta name="description" content="Does it even exist?" />
+
+        <meta property="og:site_name" content="pdt's Blog!" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Idiomatic C++?"/>
+        <meta property="og:url" content="http://blog.pdt.space/posts/2015/09/idiomatic-c/"/>
+        <meta property="og:description" content="Does it even exist?"/>
+        <meta property="article:published_time" content="2015-09-19" />
+            <meta property="article:section" content="dev" />
+            <meta property="article:tag" content="dev" />
+            <meta property="article:tag" content="cpp" />
+            <meta property="article:tag" content="c++" />
+            <meta property="article:tag" content="coding-style" />
+            <meta property="article:author" content="pdt" />
+
+
+    <!-- Bootstrap -->
+ <!-- Use CDN instead, by default -->
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.1.0/css/flatly/bootstrap.min.css" type="text/css"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="http://blog.pdt.space/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="http://blog.pdt.space/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://blog.pdt.space/theme/css/style.css" type="text/css"/>
+        <link href="http://blog.pdt.space/static/css/build/custom_style.css" rel="stylesheet">
+
+        <link href="http://blog.pdt.space/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="pdt's Blog! ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://blog.pdt.space/" class="navbar-brand">
+pdt's Blog!            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://blog.pdt.space/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="http://blog.pdt.space/pages/contact.html">
+                             Contact
+                          </a></li>
+                        <li class="active">
+                            <a href="http://blog.pdt.space/category/dev.html">Dev</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/devmisc.html">Dev,misc</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/stuffs.html">Stuffs</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://blog.pdt.space/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://blog.pdt.space/posts/2015/09/idiomatic-c/"
+                       rel="bookmark"
+                       title="Permalink to Idiomatic C++?">
+                        Idiomatic&nbsp;C++?
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-19T19:10:00+07:00"> Sat 19 September 2015</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://blog.pdt.space/author/pdt.html"><i class="fa fa-user"></i> pdt</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://blog.pdt.space/tag/dev.html">dev</a>
+        /
+	<a href="http://blog.pdt.space/tag/cpp.html">cpp</a>
+        /
+	<a href="http://blog.pdt.space/tag/c.html">c++</a>
+        /
+	<a href="http://blog.pdt.space/tag/coding-style.html">coding-style</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+                <p>I first learned programming in C++ and then Java.
+2 years later when I first coded in Python, I still remember being completely amazed by its elegance.
+When a Python program is well written, it&#8217;s always also very easy to read,
+much like natural language, very succinct. Contrary to Java being extremely verbose.
+I believe most of the time a beautiful Python code is also more&nbsp;efficient.</p>
+<p>The language has evolved over the year yet its <code>Pythonic</code> way of writing code is somehow
+always there, unlike many other&nbsp;languages.</p>
+<p>I have read a tons of C++ code, and while I don&#8217;t expect it to be
+<a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>
+<!-- it's could not say it's an lovely experience, especially -->
+the experience so far is quite disappointing, especially for non-experienced programmers.
+You have C++99  and then we have the cool <code>modern C++</code> which comprises of
+<code>C++11, C++14, C++18</code>. They all have very different, contrast styles. Plus, with heavy use of
+templates in C++, I sometime find myself lost following the ideas behind the code.
+Even with well-written&nbsp;codebase.</p>
+<p>Fortunately, recently I&#8217;ve found this <a href="https://github.com/isocpp/CppCoreGuidelines">git repo called C++ guidelines </a>
+trying to change the situation  by consolidate all the best practices into one place.
+The editors speak for themselves: Herb Sutter \&amp; Bjarne&nbsp;Stroustrup.</p>
+<p>I find it a very needed move, taken into account that modern C++ style is more and more adopted nowadays
+(I didn&#8217;t know of it when I was in college). After spending some time reading this guides, I&#8217;ve already learned
+quite a&nbsp;lot.</p>
+<p>However, I don&#8217;t know how long it would take someone like me to change completely the style to adhere the core guidelines,
+even with the best of intentions. You see, with Python after writing a piece of code, you just simply sense 
+if you did something wrong or not, intuitively. Like it looks a bit ugly, or too much verbose, something like
+that, triggering the urge for&nbsp;refactoring.</p>
+<p>With C++, it&#8217;s just harder. Don&#8217;t get me wrong, unlike many of my friends, I adore C++ and its power.
+Maybe it comes with time, I don&#8217;t know. But I know I&#8217;m going to&nbsp;try.</p>
+<p>P/S: Since I wrote this I&#8217;ve read quite a lot more about modern C++ from the guidelines
+and the <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective C++ book by Scott Meyers</a>,
+so far I&#8217;m even more impressed and started to appreciate the <code>Idiomatc C++</code>. You know when it starts to grow on you.
+Going to C++ meetups at my city obviously also&nbsp;helps.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'idiomatic-c';
+                var disqus_url = 'http://blog.pdt.space/posts/2015/09/idiomatic-c/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 pdt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+
+ <!-- Use CDN instead, fallback if necessary -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+  <script type="text/javascript">//<![CDATA[   
+   /* jquery fallback */
+   (window.jQuery) || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/jquery.min.js">\x3C/script>');
+   //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* bootstrap fallback */
+   if(typeof($.fn.modal) === 'undefined') { 
+     document.write('<script src="http://blog.pdt.space/theme/js/bootstrap.min.js">\x3C/script>'); 
+     $("head").append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/bootstrap.flatly.min.css" type="text/css" />'); 
+   } //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* respond.js fallback */
+   window.respond || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/respond.min.js">\x3C/script>')
+   /* font-awesome fallback */
+   $(window).load(function() {
+     (function($){
+       var $item = $('.fa').first();
+       if ($item.css('fontFamily') !== 'FontAwesome' ) {
+	 $('head').append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/font-awesome.min.css">');
+       }
+     })(jQuery);//]]>
+   });   //]]>  </script>
+ 
+
+<script type='text/javascript'>//<![CDATA[
+
+</script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-60741981-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

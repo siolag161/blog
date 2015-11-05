@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/11/biggest-professional-mistake/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/09/idiomatic-c/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/09/some-more-thoughts-from-my-trip-back-home/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/09/the-case-of-latex-in-todays-world/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/08/random-thoughts-after-my-trip-back-to-home/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/07/the-game-of-git/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/07/music-for-coding/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/07/python-matrix-initialization/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/06/my-setup-for-this-very-blog/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/03/c-environnement-setup/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/posts/2015/03/my-first-post-ever/</loc>
+    <priority>0.8</priority>
+  </url>
+
+
+  <url>
+    <loc>http://blog.pdt.space/pages/about.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>http://blog.pdt.space/pages/contact.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+
+</urlset>

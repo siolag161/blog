@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Markov Chain for Text Generation - pdt's Blog!</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  -->
+
+    <link href="http://blog.pdt.space/extras/favicon" rel="icon">
+
+<link rel="canonical" href="http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/">
+
+        <meta name="author" content="pdt" />
+        <meta name="keywords" content="nlp,dev,model,markov" />
+        <meta name="description" content="Simple yet fun" />
+
+        <meta property="og:site_name" content="pdt's Blog!" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Markov Chain for Text Generation"/>
+        <meta property="og:url" content="http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/"/>
+        <meta property="og:description" content="Simple yet fun"/>
+        <meta property="article:published_time" content="2015-07-26" />
+            <meta property="article:section" content="dev" />
+            <meta property="article:tag" content="nlp" />
+            <meta property="article:tag" content="dev" />
+            <meta property="article:tag" content="model" />
+            <meta property="article:tag" content="markov" />
+            <meta property="article:author" content="pdt" />
+
+
+    <!-- Bootstrap -->
+ <!-- Use CDN instead, by default -->
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.1.0/css/flatly/bootstrap.min.css" type="text/css"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="http://blog.pdt.space/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="http://blog.pdt.space/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://blog.pdt.space/theme/css/style.css" type="text/css"/>
+        <link href="http://blog.pdt.space/static/css/build/custom_style.css" rel="stylesheet">
+
+        <link href="http://blog.pdt.space/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="pdt's Blog! ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://blog.pdt.space/" class="navbar-brand">
+pdt's Blog!            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://blog.pdt.space/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="http://blog.pdt.space/pages/contact.html">
+                             Contact
+                          </a></li>
+                        <li class="active">
+                            <a href="http://blog.pdt.space/category/dev.html">Dev</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/devmisc.html">Dev,misc</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/stuffs.html">Stuffs</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://blog.pdt.space/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/"
+                       rel="bookmark"
+                       title="Permalink to Markov Chain for Text Generation">
+                        Markov Chain for Text&nbsp;Generation
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-26T17:43:00+07:00"> Sun 26 July 2015</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://blog.pdt.space/author/pdt.html"><i class="fa fa-user"></i> pdt</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://blog.pdt.space/tag/nlp.html">nlp</a>
+        /
+	<a href="http://blog.pdt.space/tag/dev.html">dev</a>
+        /
+	<a href="http://blog.pdt.space/tag/model.html">model</a>
+        /
+	<a href="http://blog.pdt.space/tag/markov.html">markov</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+                <p>Yesterday, I stumbled upon <a href="https://www.reddit.com/r/nba/comments/3ei3i7/theres_a_bot_that_comments_as_you_based_on_your/">this post</a>
+while browsing reddit on the <span class="caps">NBA</span> sub (I&#8217;m a <span class="caps">NBA</span> follower).
+In brief, it was about a reddit post that generate gibberish comments based on your
+own activity&nbsp;history.</p>
+<p>For those who are not familiar with these kind of bots. Basically, they&#8217;re some program
+that systematically scan new posts in certain subreddits (sub-forums kind-of) and
+then trigger some actions based on some pre-defined rules. For example, a bot
+would periodically visit the <code>soccer</code> subreddit and everytime it see a youtube video posted,
+it would try to download this video and upload to another video services (since youtube is famous, understandably,
+for being very aggressive in video&nbsp;deletion)</p>
+<p>In this case, if we type a username and then the bot&#8217;s name, the bot would then scan
+the user&#8217;s comment history and generate some funny nonsense comment. It was an instant hit
+due to some gems&nbsp;like</p>
+<blockquote>
+<p>This comment is so terrible that it might just use him as the primary ball handler
+off the top 5 mid-range shooter in the future.
+Anthony Davis 43 pts / 10 reb / 3 blk. He won&#8217;t be a hall of&nbsp;famer.</p>
+</blockquote>
+<p>or, you know, because it&#8217;s the <span class="caps">NBA</span>&nbsp;offseason.</p>
+<p>How can they do it? Actually it&#8217;s the same way people build <a href="https://en.wikipedia.org/wiki/Mark_V._Shaney">chatbot</a> back in the day.
+I think today it&#8217;s getting much more complicated, but maybe they just got more data?
+Either case, the engine&#8217;s behind the scene is something called <a href="https://en.wikipedia.org/wiki/Markov_chain">&#8220;Markov chain&#8221;</a>.</p>
+<h1 id="markov-model-for-english-text">Markov model for English text<a class="headerlink" href="#markov-model-for-english-text" title="Permanent link">&para;</a></h1>
+<p>First, we have to understand the way text/document are models. I&#8217;m definitely not going into details
+here but roughly speaking, a text can be thought as a sequence of words (actually <code>shingles</code>, but more on that later),
+based on some loosely defined rules. What do I mean by <code>loosely defined</code>? Let&#8217;s consider this&nbsp;sentence</p>
+<blockquote>
+<p>I found myself wishing Berg focused more on Brower&#8217;s&nbsp;investigations.</p>
+</blockquote>
+<p>Now, we can think it as a sequence of [<code>I</code>, <code>found</code>, <code>myself</code>, <code>wishing</code>, <code>Berg</code>, <code>focused</code>, <code>more</code>,
+<code>on</code>, <code>Brower's</code>, <code>investigations</code>]. So if I were a child and that&#8217;s the first time I heard an English
+sentence, since no ones taught me grammar yet, I would think that well, based on my own observation,
+a sentence probably starts always with an <code>I</code>, and then follows by <code>found</code>, then <code>myself</code> and so on.
+Which means here we ignore virtually everything about the grammar (tenses, positions,&nbsp;etc&#8230;).</p>
+<p>Then maybe after that, I see and hear more and more then probably I would get that sometime there&#8217;re more verbs
+then <code>found</code>. Probably there&#8217;s a <code>he</code> or <code>she</code> which acts as the subject also. More precisely,
+let&#8217;s say I heard another&nbsp;sentence:</p>
+<blockquote>
+<p>I found him to be quite&nbsp;ignorant.</p>
+</blockquote>
+<p>now, <code>found</code> is not <strong>always</strong> followed by <code>myself</code> but there&#8217;s a 50% chance it&#8217;s a <strong>him</strong>.</p>
+<p>What we just described is called 2-order Markov chain model for text generation. Indeed, the <code>1-order</code> part
+refers to the fact we only use a sequences of pair of consecutive words to form a sentence.
+We look at (&#8216;I&#8217;, &#8216;found&#8217;), then (&#8216;found&#8217;, &#8216;him&#8217;) or (&#8216;found&#8217;, &#8216;myself&#8217;) and so&nbsp;on.</p>
+<p>So now, it&#8217;s my turn to talk back. I would construct a sentence by <code>chaining</code> the &#8216;pairs&#8217; together until I hit
+something that marks the end (like <code>.</code> or &#8216;!&#8217;). More technically correct, after building the model,
+we would obtain a random graph, and in order to generate the text, we perform simply a random walk in this&nbsp;graph.</p>
+<p>Such pair is often called &#8216;bigram&#8217;, <a href="https://en.wikipedia.org/wiki/N-gram">more on that here for the general case</a>.
+People find that an order between <code>2</code> and <code>5</code> would get the job done in most&nbsp;cases.</p>
+<h1 id="how-to-learn-the-model">How to learn the model?<a class="headerlink" href="#how-to-learn-the-model" title="Permanent link">&para;</a></h1>
+<p>You may say that it looks quite simplist but it works pretty well in practice. It&#8217;s also quite easy
+to write the code to train the model. We have to split the document into consecutive <code>n-gram</code> (or shingles)
+and then update the Markov chain&#8217;s parameters, which consist only of the shingle&#8217;s occurrences. Actually,
+we learn the matrix of transition but it&#8217;s not that&nbsp;important.</p>
+<p>The simplicity is partially due to the way English word separation works. Indeed, in English (or French and many other languages),
+what separates 2 sepaxrate words is either a space or some punctuation (<code>,</code>, &#8216;.&#8217;, &#8216;!&#8217;, &#8230;). In some other language like
+Vietnamese, it&#8217;d get much more complicated so obtain n-gram since there are composite words, like &#8220;to quoc&#8221; is just a word.
+Actually in English there also &#8220;composite words&#8221; like this, the idea stills hold, we have to take into account the context&nbsp;somehow.</p>
+<p>You can find much more information on the model on the internet, espcially on the theorical side. It&#8217;s probably the most
+basic model yet gives an important more general idea of how statistical learning approach works in natural langague&nbsp;processing.</p>
+<h1 id="nba-comment-bots-and-other-applications"><span class="caps">NBA</span> comment bot&#8217;s and other applications<a class="headerlink" href="#nba-comment-bots-and-other-applications" title="Permanent link">&para;</a></h1>
+<p>Applications of such bot are vast. They used to power botchat. The way botchat works are that they already have a trained model,
+it would generate the reply back to you using your sentence as <code>context</code>. For&nbsp;example,</p>
+<p>You may&nbsp;say:</p>
+<blockquote>
+<p>Let&#8217;s talk about&nbsp;Bush</p>
+</blockquote>
+<p>then it would use [<code>talk</code>, <code>let's</code>, &#8216;Bush&#8217;] as seeds for the next&nbsp;reply:</p>
+<blockquote>
+<p>Bush is no longer in the office, Obama is. (using Bush)
+Let&#8217;s talk about Kim Kardashian instead (using&nbsp;let&#8217;s)</p>
+</blockquote>
+<p>and then use your text to update the model. I&#8217;ve heard some model that&#8217;s trained for decades, wondering around
+in many chat channels, talking with generations of innocent&nbsp;souls!</p>
+<p>With <span class="caps">NBA</span> bot (or twitterbot), the same ideas apply. But if you cross multiple contexts and text, for example
+comment history with something serious such as the Bible, probably it&#8217;d generate some rather amusing result (or offensive, it&nbsp;depends!)</p>
+<p>It&#8217;s also used to generate random fake comments (for example: <code>I heard that this product is pretty great</code>)
+but I think we should heavily tweak the model in order to bypass the&nbsp;filter.</p>
+<h1 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/siolag161/markov_generator">Here&#8217;s a yet another Markov model I coded in Python </a> which use the book of Tao as input,&nbsp;generating:</p>
+<div class="highlight"><pre><span class="o">[</span>1<span class="o">]</span>: Is it not because it could not hurt men.
+
+<span class="o">[</span>2<span class="o">]</span>: The softest thing in the Tao, the more implements to add to his own person last, and <span class="k">do</span> not know it.
+
+<span class="o">[</span>3<span class="o">]</span>: The excellence of a reward <span class="k">for</span> the things which I call it The Great.
+
+<span class="o">[</span>4<span class="o">]</span>: There are few in the world delight to exalt him and <span class="k">do</span> not know it.
+
+<span class="o">[</span>5<span class="o">]</span>: Therefore when one knows that the ancients prized this Tao, the more.
+</pre></div>
+
+
+<p>it trains the model only in memory. If you want to train the model for years like those chatbots, you should have a database.
+Probably just a lightweight one&nbsp;suffices.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'markov-chain-for-text-generation';
+                var disqus_url = 'http://blog.pdt.space/posts/2015/07/markov-chain-for-text-generation/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 pdt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+
+ <!-- Use CDN instead, fallback if necessary -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+  <script type="text/javascript">//<![CDATA[   
+   /* jquery fallback */
+   (window.jQuery) || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/jquery.min.js">\x3C/script>');
+   //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* bootstrap fallback */
+   if(typeof($.fn.modal) === 'undefined') { 
+     document.write('<script src="http://blog.pdt.space/theme/js/bootstrap.min.js">\x3C/script>'); 
+     $("head").append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/bootstrap.flatly.min.css" type="text/css" />'); 
+   } //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* respond.js fallback */
+   window.respond || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/respond.min.js">\x3C/script>')
+   /* font-awesome fallback */
+   $(window).load(function() {
+     (function($){
+       var $item = $('.fa').first();
+       if ($item.css('fontFamily') !== 'FontAwesome' ) {
+	 $('head').append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/font-awesome.min.css">');
+       }
+     })(jQuery);//]]>
+   });   //]]>  </script>
+ 
+
+<script type='text/javascript'>//<![CDATA[
+
+</script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-60741981-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

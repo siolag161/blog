@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Label matching for clustering evaluation - pdt's Blog!</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  -->
+
+    <link href="http://blog.pdt.space/extras/favicon" rel="icon">
+
+<link rel="canonical" href="http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/">
+
+        <meta name="author" content="pdt" />
+        <meta name="keywords" content="dev,code,python,clustering" />
+        <meta name="description" content="Task assignment in clustering evaluation" />
+
+        <meta property="og:site_name" content="pdt's Blog!" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Label matching for clustering evaluation"/>
+        <meta property="og:url" content="http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/"/>
+        <meta property="og:description" content="Task assignment in clustering evaluation"/>
+        <meta property="article:published_time" content="2015-07-10" />
+            <meta property="article:section" content="dev" />
+            <meta property="article:tag" content="dev" />
+            <meta property="article:tag" content="code" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="clustering" />
+            <meta property="article:author" content="pdt" />
+
+
+    <!-- Bootstrap -->
+ <!-- Use CDN instead, by default -->
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.1.0/css/flatly/bootstrap.min.css" type="text/css"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="http://blog.pdt.space/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="http://blog.pdt.space/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://blog.pdt.space/theme/css/style.css" type="text/css"/>
+        <link href="http://blog.pdt.space/static/css/build/custom_style.css" rel="stylesheet">
+
+        <link href="http://blog.pdt.space/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="pdt's Blog! ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://blog.pdt.space/" class="navbar-brand">
+pdt's Blog!            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://blog.pdt.space/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="http://blog.pdt.space/pages/contact.html">
+                             Contact
+                          </a></li>
+                        <li class="active">
+                            <a href="http://blog.pdt.space/category/dev.html">Dev</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/devmisc.html">Dev,misc</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/stuffs.html">Stuffs</a>
+                        </li>
+                        <li >
+                            <a href="http://blog.pdt.space/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://blog.pdt.space/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/"
+                       rel="bookmark"
+                       title="Permalink to Label matching for clustering evaluation">
+                        Label matching for clustering&nbsp;evaluation
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-10T11:20:00+07:00"> Fri 10 July 2015</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://blog.pdt.space/author/pdt.html"><i class="fa fa-user"></i> pdt</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://blog.pdt.space/tag/dev.html">dev</a>
+        /
+	<a href="http://blog.pdt.space/tag/code.html">code</a>
+        /
+	<a href="http://blog.pdt.space/tag/python.html">python</a>
+        /
+	<a href="http://blog.pdt.space/tag/clustering.html">clustering</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+
+                <p>Let&#8217;s say we perform a cluster analysis on the dataset using a fancy algorithm
+and we would like to know whether it performs well. If we&#8217;re really lucky and
+have at disposal the ground truth (<span class="caps">GT</span>), we can check if the result we obtained (<span class="caps">CT</span>) with
+the clustering algorithm are <code>similar</code> to the said ground truth. What this means
+is that <strong><span class="caps">GT</span></strong> and <strong><span class="caps">CT</span></strong> should agree most of the time (relatively speaking) whether to
+group two objects in a same group or in two seperate ones. In other words, they should
+have a high degree of&nbsp;agreement.</p>
+<p>There&#8217;re several approaches to quantify the degree of agreement. Here since we know
+the ground truth, we could use <a href="https://en.wikipedia.org/wiki/Cluster_analysis#External_evaluation">external measures</a>.
+Among these, there&#8217;s this particular method based on <code>confusion matrix</code> which is very widely used in classification,
+to show how much <strong><span class="caps">CT</span></strong> is different from <strong><span class="caps">GT</span></strong>.</p>
+<h1 id="confustion-matrix">Confustion matrix<a class="headerlink" href="#confustion-matrix" title="Permanent link">&para;</a></h1>
+<p>How to construct a such confusion matrix from <strong><span class="caps">CT</span></strong> and <strong><span class="caps">GT</span></strong>? One common way, from classification, is to
+first represent a clustering as an array, mapping each object to the cluster it belongs to, like&nbsp;so:</p>
+<div class="highlight"><pre><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">2</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">2</span><span class="o">|</span><span class="mi">2</span><span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>here we have 2 clusterings of 3 clusters on 6 objects. So we have 2 arrays of the same length and
+the same cardinality <code>T</code>.</p>
+<p>The confusion matrix has then a dimension of <code>TxT</code> where each <code>(i,j)</code> is
+the number that <strong><span class="caps">GT</span></strong> classifies as <code>i</code> while <strong><span class="caps">CT</span></strong> classifies as <code>j</code>.</p>
+<h1 id="problem-of-label-meaning">Problem of label meaning<a class="headerlink" href="#problem-of-label-meaning" title="Permanent link">&para;</a></h1>
+<p>The deal with this approach is that it doesn&#8217;t work as properly in cluster analysis as in classification because
+in classification each class has an underlying meaning, such as &#8216;dog&#8217; and &#8216;cat&#8217;, for example; wheareas in clustering
+if we any permutation of the classes would&nbsp;do.</p>
+<p>For example, if we compute the accuracy for these two&nbsp;clusterings:</p>
+<div class="highlight"><pre><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>it would yield a value of <code>0.0</code>!! but in reality it perfectly agrees on how to group objects in categories. So
+we got it totally&nbsp;wrong.</p>
+<h1 id="label-matching">Label matching<a class="headerlink" href="#label-matching" title="Permanent link">&para;</a></h1>
+<p>The naive way is to consider all the label permutations possible for
+<strong><span class="caps">CT</span></strong> and compares it with <strong><span class="caps">GT</span></strong> and pick the one that minimizes the error.
+Look at the example above. In the <code>(2)</code> clustering, if we change the label <code>1</code>
+to <code>0</code> while fixing the rest labeling, we can see that we now have a
+better result, in term of similarity to <code>(1)</code>. It would not suffice however, under
+<!&#8212; our conditions (the 2 label sets must match) we have to also assign <code>0</code> to <code>1</code> &#8212;>.
+if we continue and assign <code>0</code> to <code>1</code> we can get even a better&nbsp;labeling.</p>
+<!-- But by how much did we improve? -->
+
+<!-- Let's say we have 2 clustering `C1` and `C2`, -->
+
+<!-- Indeed, one way to measure the distance between 2 clusterings is to count the  -->
+
+<!-- We first define a cost function `f(c1, c2)` -->
+
+<p>In reality we can do better than the brute force approach. Our problem is actually
+equivalent to the <a href="https://en.wikipedia.org/wiki/Assignment_problem#Algorithms_and_generalizations">assigment problem</a>
+in which we assign labels to labels. We need to compute the cost matrix, however.
+This is the complement of the gain matrix whose element <code>(i,j)</code> is the number of
+items that is classified as <code>i</code>in the first labeling and as <code>j</code> in the second&nbsp;one.</p>
+<h1 id="demonstration-using-hungarian-solver">Demonstration using <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian solver</a><a class="headerlink" href="#demonstration-using-hungarian-solver" title="Permanent link">&para;</a></h1>
+<p>Here is a gist for matching label of a clustering obtained by <code>K-means</code> to the
+ground truth, on the famous <code>Iris</code> dataset using the Hungarian algorithm,
+also called&nbsp;Munkres.</p>
+<p>We need the <code>numpy</code>, <code>scipy</code> and the <a href="https://github.com/bmc/munkres">Munkres&nbsp;package</a></p>
+<p><script src="https://gist.github.com/siolag161/dc6e42b64e1bde1f263b.js"></script></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'label-matching-for-clustering-evaluation';
+                var disqus_url = 'http://blog.pdt.space/posts/2015/07/label-matching-for-clustering-evaluation/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 pdt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+
+ <!-- Use CDN instead, fallback if necessary -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+  <script type="text/javascript">//<![CDATA[   
+   /* jquery fallback */
+   (window.jQuery) || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/jquery.min.js">\x3C/script>');
+   //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* bootstrap fallback */
+   if(typeof($.fn.modal) === 'undefined') { 
+     document.write('<script src="http://blog.pdt.space/theme/js/bootstrap.min.js">\x3C/script>'); 
+     $("head").append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/bootstrap.flatly.min.css" type="text/css" />'); 
+   } //]]>  </script>
+  <script type="text/javascript">//<![CDATA[   
+   /* respond.js fallback */
+   window.respond || document.write('<script type="text/javascript" src="http://blog.pdt.space/theme/js/respond.min.js">\x3C/script>')
+   /* font-awesome fallback */
+   $(window).load(function() {
+     (function($){
+       var $item = $('.fa').first();
+       if ($item.css('fontFamily') !== 'FontAwesome' ) {
+	 $('head').append('<link rel="stylesheet" href="http://blog.pdt.space/theme/css/font-awesome.min.css">');
+       }
+     })(jQuery);//]]>
+   });   //]]>  </script>
+ 
+
+<script type='text/javascript'>//<![CDATA[
+
+</script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pdt-space'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-60741981-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

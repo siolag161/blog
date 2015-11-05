@@ -1,0 +1,22 @@
+.toc {
+  ul { 
+    list-style-type: none;
+  }
+}
+
+a.headerlink {
+  visibility: hidden;
+  padding-left: 0.5em;
+  color: grey;
+}
+
+.gist-syntax {
+  .highlight pre {
+    background: #fff;
+    color: #333;
+  }
+}
+
+p {
+  font-size: 18px;
+}
